@@ -1,0 +1,34 @@
+apply from: ("../common.gradle")
+group = 'com.distrimind.flexilogxml.desktop'
+sourceSets {
+    test {
+        java {
+            srcDirs += ['../test/java']
+        }
+        resources {
+            srcDirs += ['../test/resources']
+        }
+    }
+}
+dependencies {
+    api project(':DM-FlexiLogXML-Common')
+    testImplementation project(':DM-FlexiLogXML-Common')
+
+    testImplementation jlibs.slf4Jdk14
+    testImplementation jlibs.testng
+}
+
+test {
+    systemProperty 'java.util.logging.config.file', file('src/test/resources/logging.properties').absolutePath
+
+    // enable TestNG support (default is JUnit)
+    useTestNG {
+        /*parallel 'none'
+        maxParallelForks = 1*/
+        suites 'src/test/resources/com/distrimind/xmllib/desktop/AllTestsNG.xml'
+    }
+
+    minHeapSize = "1G"
+    maxHeapSize = "10g"
+
+}

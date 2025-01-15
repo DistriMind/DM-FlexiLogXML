@@ -1,0 +1,13 @@
+rootProject.name = 'DM-FlexiLogXML'
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        jlibs {
+            from(files("libs.versions.toml"))
+        }
+    }
+}
+include 'DM-FlexiLogXML-Desktop'
+include 'DM-FlexiLogXML-Android'
+include 'DM-FlexiLogXML-Common'
+

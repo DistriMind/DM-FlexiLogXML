@@ -1,0 +1,9 @@
+apply from: ("../common.gradle")
+group = 'com.distrimind.flexilogxml.android'
+
+dependencies {
+    api project(':DM-FlexiLogXML-Common')
+
+    compileOnly jlibs.androidStub
+    compileOnly jlibs.xmlpull
+}
