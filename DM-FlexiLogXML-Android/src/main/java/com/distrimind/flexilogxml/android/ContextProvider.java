@@ -25,7 +25,7 @@ package com.distrimind.flexilogxml.android;
 
 import android.app.Application;
 import android.content.Context;
-import com.distrimind.flexilogxml.XMLLib;
+import com.distrimind.flexilogxml.FlexiLogXML;
 import org.slf4j.event.Level;
 
 /**
@@ -51,7 +51,7 @@ public class ContextProvider {
 		Context r=application.getApplicationContext();
 		if (r==null) {
 			application = null;
-			XMLLib.log(Level.ERROR, () -> "Error : context was not defined. Please affect context by calling method com.distrimind.flexilogxml.android.ContextProvider.initialize(Application) according to Android Application instance");
+			FlexiLogXML.log(Level.ERROR, () -> "Error : context was not defined. Please affect context by calling method com.distrimind.flexilogxml.android.ContextProvider.initialize(Application) according to Android Application instance");
 			throw new RuntimeException();
 		}
 		return r;

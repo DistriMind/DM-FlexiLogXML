@@ -50,32 +50,32 @@ public class TestNGListener implements InvocationHandler {
             case "onTestStart":
                 if (result==null)
                     throw new NullPointerException();
-                XMLLib.log(Level.INFO, "Test begin: " + getTestName(result));
+                FlexiLogXML.log(Level.INFO, "Test begin: " + getTestName(result));
                 break;
             case "onTestSuccess":
                 if (result==null)
                     throw new NullPointerException();
-                XMLLib.log(Level.INFO,  "Test success: " + getTestName(result) + getStringDuration(result));
+                FlexiLogXML.log(Level.INFO,  "Test success: " + getTestName(result) + getStringDuration(result));
                 break;
             case "onTestFailure":
                 if (result==null)
                     throw new NullPointerException();
-                XMLLib.log(Level.ERROR,  "Test failed: " + getTestName(result) + getStringDuration(result), getThrowable(result));
+                FlexiLogXML.log(Level.ERROR,  "Test failed: " + getTestName(result) + getStringDuration(result), getThrowable(result));
                 break;
             case "onTestSkipped":
                 if (result==null)
                     throw new NullPointerException();
-                XMLLib.log(Level.WARN,  "Test skipped: " + getTestName(result) + getStringDuration(result));
+                FlexiLogXML.log(Level.WARN,  "Test skipped: " + getTestName(result) + getStringDuration(result));
                 break;
             case "onTestFailedButWithinSuccessPercentage":
                 if (result==null)
                     throw new NullPointerException();
-                XMLLib.log(Level.ERROR,  "Test failed but within percentage: " + getTestName(result), getThrowable(result));
+                FlexiLogXML.log(Level.ERROR,  "Test failed but within percentage: " + getTestName(result), getThrowable(result));
                 break;
             case "onTestFailedWithTimeout":
                 if (result==null)
                     throw new NullPointerException();
-                XMLLib.log(Level.ERROR, "Test failed with timeout: " + getTestName(result) + getStringDuration(result), getThrowable(result));
+                FlexiLogXML.log(Level.ERROR, "Test failed with timeout: " + getTestName(result) + getStringDuration(result), getThrowable(result));
                 break;
             case "equals":
                 return proxy==result;

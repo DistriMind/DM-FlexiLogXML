@@ -23,7 +23,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 package com.distrimind.flexilogxml.log;
 
-import com.distrimind.flexilogxml.XMLLib;
+import com.distrimind.flexilogxml.FlexiLogXML;
 import org.slf4j.Marker;
 import org.slf4j.event.Level;
 
@@ -42,16 +42,16 @@ public class LogRecord {
 	private final Object[] arguments;
 	private long createdOnUTC;
 	public LogRecord(Level level, String message) {
-		this(level, XMLLib.getMarker(), message, null, null);
+		this(level, FlexiLogXML.getMarker(), message, null, null);
 	}
 	public LogRecord(Level level,  Throwable t) {
-		this(level, XMLLib.getMarker(), "", t, null);
+		this(level, FlexiLogXML.getMarker(), "", t, null);
 	}
 	public LogRecord(Level level, String message, Throwable t) {
-		this(level, XMLLib.getMarker(), message, t, null);
+		this(level, FlexiLogXML.getMarker(), message, t, null);
 	}
 	public LogRecord(Level level, String message, Throwable t, Object[] arguments) {
-		this(level, XMLLib.getMarker(), message, t, arguments);
+		this(level, FlexiLogXML.getMarker(), message, t, arguments);
 	}
 	public LogRecord(Level level, Marker marker, String message, Throwable t, Object[] arguments) {
 		if (level==null)

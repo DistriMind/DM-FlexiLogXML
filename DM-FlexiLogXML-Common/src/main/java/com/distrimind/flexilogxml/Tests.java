@@ -225,7 +225,7 @@ public class Tests {
             Object suite=getSuite();
             writer.write((String)toXmlMethod.invoke(suite));
             writer.write(System.lineSeparator());
-            XMLLib.log(Level.INFO, "TestNG instance has been saved to: " + file);
+            FlexiLogXML.log(Level.INFO, "TestNG instance has been saved to: " + file);
         } catch (IllegalAccessException | IOException e) {
             throw new DMIOException(e);
         }
@@ -293,26 +293,26 @@ public class Tests {
     public void runTestNGWithJunit(final String markerName) throws Throwable
     {
         checkJUnitClassesLoaded();
-        Marker oldMarker= XMLLib.getMarker();
+        Marker oldMarker= FlexiLogXML.getMarker();
         try {
             if (markerName!=null)
-                XMLLib.setMarker(MarkerFactory.getMarker(markerName));
+                FlexiLogXML.setMarker(MarkerFactory.getMarker(markerName));
             try {
                 Object testNG = runTestNG();
                 junitAssertFalseMethod.invoke(null, "TestNG method(s) skipped into "+this, hasSkipMethod.invoke(testNG));
                 junitAssertFalseMethod.invoke(null, "TestNG method(s) failed into "+this, hasFailureWithinSuccessPercentageMethod.invoke(testNG));
                 junitAssertFalseMethod.invoke(null, "TestNG method(s) failed into "+this, hasFailureMethod.invoke(testNG));
             } catch (InvocationTargetException e) {
-                XMLLib.log(Level.ERROR, e.getCause());
+                FlexiLogXML.log(Level.ERROR, e.getCause());
                 throw e.getCause();
             } catch (Exception e) {
-                XMLLib.log(Level.ERROR, e);
+                FlexiLogXML.log(Level.ERROR, e);
                 throw e;
             }
         }
         finally {
             if (markerName!=null)
-                XMLLib.setMarker(oldMarker);
+                FlexiLogXML.setMarker(oldMarker);
         }
     }
     public void runTestNG(Object testNG) throws Throwable {

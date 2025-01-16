@@ -71,7 +71,7 @@ public class ReflectionTools {
 			return (T) m.invoke(o, args);
 		} catch (IllegalAccessException | IllegalArgumentException e) {
 			if (exitOnFail) {
-				XMLLib.log(Level.ERROR, () -> "Impossible to access to the function " + m.getName() + " of the class "
+				FlexiLogXML.log(Level.ERROR, () -> "Impossible to access to the function " + m.getName() + " of the class "
 						+ m.getDeclaringClass()
 						+ INNER_BUG_STRING, e);
 				System.exit(-1);
@@ -108,7 +108,7 @@ public class ReflectionTools {
 			throw new NoSuchMethodException("No such method: " + clazz.getName() + '.' + methodName);
 		} catch (SecurityException | NoSuchMethodException e) {
 			if (exitOnFail) {
-				XMLLib.log(Level.ERROR, () -> "Impossible to access to the function " + methodName + " of the class "
+				FlexiLogXML.log(Level.ERROR, () -> "Impossible to access to the function " + methodName + " of the class "
 						+ clazz.getCanonicalName()
 						+ INNER_BUG_STRING, e);
 				System.exit(-1);
@@ -177,7 +177,7 @@ public class ReflectionTools {
 		Supplier<String> sup = () -> "Impossible to access to the method " + getAccessorName(prefix, fieldName) + " of the class "
 				+ clazz.getCanonicalName() + INNER_BUG_STRING;
 		if (exitOnFail) {
-			XMLLib.log(Level.ERROR, sup);
+			FlexiLogXML.log(Level.ERROR, sup);
 			System.exit(-1);
 			return null;
 		} else
@@ -234,7 +234,7 @@ public class ReflectionTools {
 			throw new NoSuchFieldException("No such field: " + clazz.getName() + '.' + fieldName);
 		} catch (SecurityException | NoSuchFieldException e) {
 			if (exitOnFail) {
-				XMLLib.log(Level.ERROR, () -> "Impossible to access to the field " + fieldName + " of the class "
+				FlexiLogXML.log(Level.ERROR, () -> "Impossible to access to the field " + fieldName + " of the class "
 						+ clazz.getCanonicalName()
 						+ INNER_BUG_STRING, e);
 				System.exit(-1);
@@ -295,7 +295,7 @@ public class ReflectionTools {
 				return c.getDeclaredConstructor(parameters);
 			} catch (SecurityException | NoSuchMethodException e) {
 				if (exitOnFail) {
-					XMLLib.log(Level.ERROR, () -> "Impossible to access to the constructor of the class " + c.getCanonicalName()
+					FlexiLogXML.log(Level.ERROR, () -> "Impossible to access to the constructor of the class " + c.getCanonicalName()
 							+ INNER_BUG_STRING, e);
 					System.exit(-1);
 					return null;
@@ -318,7 +318,7 @@ public class ReflectionTools {
 			return UtilClassLoader.getLoader().loadClass(class_name);
 		} catch (SecurityException | ClassNotFoundException e) {
 			if (exitOnFail) {
-				XMLLib.log(Level.ERROR, () -> "Impossible to access to the class " + class_name
+				FlexiLogXML.log(Level.ERROR, () -> "Impossible to access to the class " + class_name
 						+ INNER_BUG_STRING, e);
 				System.exit(-1);
 				return null;

@@ -23,7 +23,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 package com.distrimind.flexilogxml.systeminfo;
 
-import com.distrimind.flexilogxml.XMLLib;
+import com.distrimind.flexilogxml.FlexiLogXML;
 import org.slf4j.event.Level;
 
 import java.util.*;
@@ -229,8 +229,8 @@ public enum OSVersion {
     
     public static void main(String[] args)
     {
-        XMLLib.log(Level.INFO, () -> OS_VERSION);
-        XMLLib.log(Level.INFO, () -> getCurrentOSVersion().toString());
-        XMLLib.log(Level.INFO, () -> getCurrentOSVersion().getOS().toString());
+        FlexiLogXML.log(Level.INFO, () -> OS_VERSION);
+        FlexiLogXML.log(Level.INFO, () -> getCurrentOSVersion().toString());
+        FlexiLogXML.log(Level.INFO, () -> getCurrentOSVersion().getOS().toString());
     }
 }

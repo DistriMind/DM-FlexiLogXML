@@ -72,7 +72,7 @@ public class UtilClassLoader extends URLClassLoader{ // NO_UCD
 			try {
 				urls[i] = new File(urlsName[i]).toURI().toURL();
 			} catch (MalformedURLException e) {
-				XMLLib.log(Level.WARN,e);
+				FlexiLogXML.log(Level.WARN,e);
 			}
 			// }
 		}
@@ -111,7 +111,7 @@ public class UtilClassLoader extends URLClassLoader{ // NO_UCD
 				}
 				catch (IOException e)
 				{
-					XMLLib.log(Level.WARN, e);
+					FlexiLogXML.log(Level.WARN, e);
 				}
 
 			} else {// Never defined nor reloaded : go for defining
@@ -189,7 +189,7 @@ public class UtilClassLoader extends URLClassLoader{ // NO_UCD
 							findClass(className);
 						}
 					} catch (ClassNotFoundException | ClassCircularityError e) {
-						XMLLib.log(Level.WARN, e);
+						FlexiLogXML.log(Level.WARN, e);
 					} // FIXME just a reminder
 
 				}

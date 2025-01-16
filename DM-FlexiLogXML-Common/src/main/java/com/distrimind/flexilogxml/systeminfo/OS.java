@@ -25,7 +25,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 package com.distrimind.flexilogxml.systeminfo;
 
 import com.distrimind.flexilogxml.UtilClassLoader;
-import com.distrimind.flexilogxml.XMLLib;
+import com.distrimind.flexilogxml.FlexiLogXML;
 import org.slf4j.event.Level;
 
 import java.io.*;
@@ -70,7 +70,7 @@ public enum OS {
 	@SuppressWarnings(UNUSED)
     public static OS getFrom(String userAgent) {
 		for (OS os : OS.values()) {
-			if (os.pattern.matcher(userAgent.toLowerCase(XMLLib.getLocale())).matches())
+			if (os.pattern.matcher(userAgent.toLowerCase(FlexiLogXML.getLocale())).matches())
 				return os;
 		}
 		return null;
@@ -194,7 +194,7 @@ public enum OS {
 			}
 			catch(IOException e)
 			{
-				XMLLib.log(Level.WARN, e);
+				FlexiLogXML.log(Level.WARN, e);
 			}
 			if (aesNIAcceleration==null)
 				aesNIAcceleration= Boolean.FALSE;
@@ -221,9 +221,9 @@ public enum OS {
 
     public static void main(String[] args)
 	{
-		XMLLib.log(Level.INFO, () -> Double.toString(getCurrentJREVersionDouble()));
-		XMLLib.log(Level.INFO, () -> Byte.toString(getCurrentJREVersionByte()));
-		XMLLib.log(Level.INFO, () -> getCurrentOSVersion().toString());
+		FlexiLogXML.log(Level.INFO, () -> Double.toString(getCurrentJREVersionDouble()));
+		FlexiLogXML.log(Level.INFO, () -> Byte.toString(getCurrentJREVersionByte()));
+		FlexiLogXML.log(Level.INFO, () -> getCurrentOSVersion().toString());
 
 	}
 }

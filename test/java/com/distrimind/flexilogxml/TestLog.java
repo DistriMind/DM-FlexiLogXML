@@ -42,19 +42,19 @@ public class TestLog {
 	public void testLog()
 	{
 		OS ignored= OS.ANDROID;
-  		XMLLib.log(Level.INFO, "One message");
-		XMLLib.log(Level.INFO, "One message with parameter {}", "param1");
-		XMLLib.log(Level.TRACE, "One message with parameter {}", "param1");
-		XMLLib.log(Level.INFO, () -> "message1");
-		XMLLib.log(Level.WARN, () -> "message2");
-		XMLLib.log(Level.ERROR, () -> "message3");
-		XMLLib.log(Level.WARN, new IllegalAccessError());
-		XMLLib.log(Level.WARN, ()-> "message5", new IllegalAccessError("message6"));
-		XMLLib.log(Level.INFO, () -> "message4");
+  		FlexiLogXML.log(Level.INFO, "One message");
+		FlexiLogXML.log(Level.INFO, "One message with parameter {}", "param1");
+		FlexiLogXML.log(Level.TRACE, "One message with parameter {}", "param1");
+		FlexiLogXML.log(Level.INFO, () -> "message1");
+		FlexiLogXML.log(Level.WARN, () -> "message2");
+		FlexiLogXML.log(Level.ERROR, () -> "message3");
+		FlexiLogXML.log(Level.WARN, new IllegalAccessError());
+		FlexiLogXML.log(Level.WARN, ()-> "message5", new IllegalAccessError("message6"));
+		FlexiLogXML.log(Level.INFO, () -> "message4");
 		try {
 			testCausedBy();
 		} catch (IllegalAccessException e) {
-			XMLLib.log(Level.ERROR, "message6", new IllegalArgumentException(e));
+			FlexiLogXML.log(Level.ERROR, "message6", new IllegalArgumentException(e));
 		}
 
 	}

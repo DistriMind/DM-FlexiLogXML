@@ -42,7 +42,7 @@ import java.util.function.Supplier;
  * @version 3.9
  */
 @SuppressWarnings("PMD")
-public class XMLLib {
+public class FlexiLogXML {
 	private static Function<String, Logger> defaultLoggerSupplier= (LogFactory::getLogger);
 	private static DMLogger logger=null;
 	private static Marker marker= null;
@@ -55,7 +55,7 @@ public class XMLLib {
 
 	public static void setMarker(Marker marker)
 	{
-		XMLLib.marker=marker;
+		FlexiLogXML.marker=marker;
 	}
 
 	public static Marker getMarker() {
@@ -64,11 +64,11 @@ public class XMLLib {
 
 	public static void setLogger(Logger logger)
 	{
-		XMLLib.logger=new DMLogger(logger);
+		FlexiLogXML.logger=new DMLogger(logger);
 	}
 	public static void setLogger(DMLogger logger)
 	{
-		XMLLib.logger=logger;
+		FlexiLogXML.logger=logger;
 	}
 
 	public static void setLogLevel(Level level)
@@ -93,7 +93,7 @@ public class XMLLib {
 	{
 		if (defaultLoggerSupplier==null)
 			throw new NullPointerException();
-		XMLLib.defaultLoggerSupplier=defaultLoggerSupplier;
+		FlexiLogXML.defaultLoggerSupplier=defaultLoggerSupplier;
 		if (resetLogger) {
 			resetLogger();
 		}
@@ -210,6 +210,6 @@ public class XMLLib {
 	}
 
 	public static void setLocale(Locale locale) {
-		XMLLib.locale = locale;
+		FlexiLogXML.locale = locale;
 	}
 }

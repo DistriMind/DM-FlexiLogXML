@@ -23,7 +23,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
 
-import com.distrimind.flexilogxml.XMLLib;
+import com.distrimind.flexilogxml.FlexiLogXML;
 
 /**
  * @author Jason Mahdjoub
@@ -40,7 +40,7 @@ public class SystemInfo {
 	{
 		if (_s!=null)
 		{
-			String s=_s.toUpperCase(XMLLib.getLocale());
+			String s=_s.toUpperCase(FlexiLogXML.getLocale());
 			for (State st : State.values())
 			{
 				if (st.name().equals(s))

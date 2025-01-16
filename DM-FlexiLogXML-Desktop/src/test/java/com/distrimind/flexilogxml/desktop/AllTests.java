@@ -24,7 +24,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 package com.distrimind.flexilogxml.desktop;
 
 import com.distrimind.flexilogxml.Tests;
-import com.distrimind.flexilogxml.XMLLib;
+import com.distrimind.flexilogxml.FlexiLogXML;
 import org.slf4j.event.Level;
 
 import java.io.File;
@@ -41,7 +41,7 @@ public class AllTests extends com.distrimind.flexilogxml.AllTests {
 		Tests t=getTests();
 		File f=new File("./DM-FlexiLogXML-Desktop/src/test/resources/com/distrimind/xmllib/desktop/AllTestsNG.xml");
 		t.saveTestNGToXML(f);
-		XMLLib.log(Level.INFO, "XML Test NG file saved into: "+f.getCanonicalPath());
+		FlexiLogXML.log(Level.INFO, "XML Test NG file saved into: "+f.getCanonicalPath());
 	}
 	public static Tests getTests()
 	{
