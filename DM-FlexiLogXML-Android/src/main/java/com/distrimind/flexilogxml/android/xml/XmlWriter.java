@@ -175,7 +175,7 @@ public class XmlWriter extends AbstractXmlWriter {
 	@Override
 	public void writeAttribute(String prefix, String namespaceURI, String localName, String value) throws XMLStreamException {
 		try {
-			serializer.setPrefix(prefix, namespaceURI);
+			//serializer.setPrefix(prefix, namespaceURI);
 			serializer.attribute(namespaceURI, localName, value);
 		} catch (IOException e) {
 			throw new XMLStreamException("Error writing attribute with prefix", e);

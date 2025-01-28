@@ -11,6 +11,11 @@ DM-FlexiLogXML
 # Changes:
 
 ### 1.2.3 STABLE (2025-01-28)
+#### Fix bug
+* Fix issue with attribute writing under Android
+
+
+### 1.2.3 STABLE (2025-01-28)
 #### New feature(s)
 * Add standalone parameter into function writeStartDocument of interface IWXmlWriter  
 

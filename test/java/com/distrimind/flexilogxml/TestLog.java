@@ -42,7 +42,6 @@ public class TestLog {
 	@SuppressWarnings("PMD.GuardLogStatement")
 	public void testLog()
 	{
-		OS ignored= OS.ANDROID;
   		FlexiLogXML.log(Level.INFO, "One message");
 		FlexiLogXML.log(Level.INFO, "One message with parameter {}", "param1");
 		FlexiLogXML.log(Level.TRACE, "One message with parameter {}", "param1");

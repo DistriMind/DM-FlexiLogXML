@@ -23,6 +23,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 package com.distrimind.flexilogxml;
 
+import com.distrimind.flexilogxml.exceptions.XMLStreamException;
 import com.distrimind.flexilogxml.xml.IXmlReader;
 import com.distrimind.flexilogxml.xml.IXmlWriter;
 import com.distrimind.flexilogxml.xml.XmlParserFactory;
@@ -75,7 +76,37 @@ public class TestXML {
 		}
 		catch (IOException e)
 		{
-			FlexiLogXML.log(Level.WARN, e);
+			FlexiLogXML.log(Level.ERROR, e);
+			Assert.fail();
 		}
+	}
+	@Test
+	public void testXMLAttribute()
+	{
+		try(ByteArrayOutputStream out2=new ByteArrayOutputStream()) {
+			IXmlWriter xmlWriter = XmlParserFactory.getXmlOutputFactory().getXMLWriter(false, out2);
+
+			// Commence le document XML
+			xmlWriter.writeStartDocument(StandardCharsets.UTF_8, "1.0", true);
+
+			String prefix = "ns";
+			String namespaceURI = "http://example.com/namespace";
+			xmlWriter.setPrefix(prefix, namespaceURI);
+			xmlWriter.writeStartElement(prefix, "root", namespaceURI);
+
+			xmlWriter.writeAttribute(namespaceURI, "localName", "value");
+
+			xmlWriter.writeCharacters("Content");
+
+			xmlWriter.writeEndElement();
+
+			xmlWriter.writeEndDocument();
+			out2.flush();
+			FlexiLogXML.log(Level.INFO, new String(out2.toByteArray(), StandardCharsets.UTF_8));
+		} catch (IOException e) {
+			FlexiLogXML.log(Level.ERROR, e);
+			Assert.fail();
+        }
+
 	}
 }
