@@ -37,7 +37,7 @@ import java.lang.reflect.InvocationTargetException;
  */
 public final class XmlParserFactory {
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({"unchecked", "PMD.PreserveStackTrace"})
 	private static <T> T getXmlFactory(String clazz) throws XMLStreamException {		try {
 			Class<? extends T> c = (Class<? extends T>)UtilClassLoader.getLoader().loadClass(clazz);
 			return c.getConstructor().newInstance();

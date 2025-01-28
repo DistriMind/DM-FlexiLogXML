@@ -10,6 +10,9 @@ DM-FlexiLogXML
 
 # Changes:
 
+### 1.2.3 STABLE (2025-01-28)
+#### New feature(s)
+* Add standalone parameter into function writeStartDocument of interface IWXmlWriter  
 
 ### 1.0.0 STABLE (2025-01-15)
 #### New feature(s)

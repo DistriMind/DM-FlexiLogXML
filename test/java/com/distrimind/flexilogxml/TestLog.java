@@ -23,6 +23,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.*/
 package com.distrimind.flexilogxml;
 
 import com.distrimind.flexilogxml.systeminfo.OS;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import org.slf4j.event.Level;
@@ -56,6 +57,6 @@ public class TestLog {
 		} catch (IllegalAccessException e) {
 			FlexiLogXML.log(Level.ERROR, "message6", new IllegalArgumentException(e));
 		}
-
+		Assert.assertTrue(true, "Test OK");
 	}
 }

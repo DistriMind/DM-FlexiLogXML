@@ -14,18 +14,12 @@
         <exclude name="AssignmentInOperand"/>
         <exclude name="TestClassWithoutTestCases"/>
         <exclude name="NullAssignment"/>
+
     </rule>
 
     <rule ref="category/java/bestpractices.xml">
-        <exclude name="UnitTestShouldIncludeAssert"/>
-        <exclude name="UnitTestAssertionsShouldIncludeMessage"/>
-        <exclude name="UnitTestShouldUseTestAnnotation"/>
-        <exclude name="UnitTestContainsTooManyAsserts"/>
-        <exclude name="PreserveStackTrace"/>
-        <exclude name="JUnitTestsShouldIncludeAssert"/>
-        <exclude name="JUnitTestContainsTooManyAsserts"/>
-        <exclude name="JUnitAssertionsShouldIncludeMessage"/>
-        <exclude name="JUnit4TestShouldUseTestAnnotation"/>
         <exclude name="UseVarargs"/>
+        <exclude name="UnitTestContainsTooManyAsserts"/>
+        <exclude name="UnitTestAssertionsShouldIncludeMessage"/>
     </rule>
 </ruleset>

@@ -24,6 +24,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 package com.distrimind.flexilogxml.android;
 
 
+import android.util.Log;
+
 import com.distrimind.flexilogxml.Tests;
 
 import org.junit.Test;
@@ -48,6 +50,7 @@ public class TestNGRunner {
 
 	@Test
 	public void allTestNG() throws Throwable {
+		Log.w("testDirectAndroidLog", new IllegalAccessError());
 		tests.runTestNGWithJunit("TestUtils");
 	}
 }

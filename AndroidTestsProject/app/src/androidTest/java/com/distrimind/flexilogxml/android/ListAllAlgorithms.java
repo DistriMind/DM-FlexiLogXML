@@ -1,6 +1,6 @@
 package com.distrimind.flexilogxml.android;
 
-import com.distrimind.flexilogxml.XMLLib;
+import com.distrimind.flexilogxml.FlexiLogXML;
 
 import org.junit.Test;
 import org.slf4j.MarkerFactory;
@@ -13,12 +13,12 @@ public class ListAllAlgorithms {
     @Test
     public void listAllAlgorithms()
     {
-        XMLLib.setMarker(MarkerFactory.getMarker("TestXMLLib"));
+        FlexiLogXML.setMarker(MarkerFactory.getMarker("TestXMLLib"));
         for (Provider provider : Security.getProviders()) {
-            XMLLib.log(Level.INFO, "Provider: " + provider.getName());
+            FlexiLogXML.log(Level.INFO, "Provider: " + provider.getName());
 
             for (Provider.Service service : provider.getServices()) {
-                XMLLib.log(Level.INFO, "\t"+service.getType()+" -  Algorithm: " + service.getAlgorithm());
+                FlexiLogXML.log(Level.INFO, "\t"+service.getType()+" -  Algorithm: " + service.getAlgorithm());
             }
         }
     }

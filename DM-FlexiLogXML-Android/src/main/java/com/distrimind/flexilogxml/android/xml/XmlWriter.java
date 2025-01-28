@@ -55,9 +55,9 @@ public class XmlWriter extends AbstractXmlWriter {
 	}
 
 	@Override
-	protected void writeStartDocumentImpl(String encoding, String version) throws XMLStreamException {
+	protected void writeStartDocumentImpl(String encoding, String version, boolean standalone) throws XMLStreamException {
 		try {
-			serializer.startDocument(encoding, true);
+			serializer.startDocument(encoding, standalone);
 		} catch (IOException e) {
 			throw new XMLStreamException("Error starting document", e);
 		}

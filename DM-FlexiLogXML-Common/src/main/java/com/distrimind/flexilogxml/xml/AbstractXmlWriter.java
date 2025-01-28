@@ -65,13 +65,13 @@ public abstract class AbstractXmlWriter extends AbstractXmlParser implements IXm
 	}
 
 	@Override
-	public void writeStartDocument(String encoding, String version) throws XMLStreamException {
+	public void writeStartDocument(String encoding, String version, boolean standalone) throws XMLStreamException {
 		if (getCurrentLevel()>0)
 			writeStartIndent();
 		incrementDocumentLevel();
-		writeStartDocumentImpl(encoding, version);
+		writeStartDocumentImpl(encoding, version, standalone);
 	}
-	protected abstract void writeStartDocumentImpl(String encoding, String version) throws XMLStreamException;
+	protected abstract void writeStartDocumentImpl(String encoding, String version, boolean standalone) throws XMLStreamException;
 
 	@Override
 	public void writeEndDocument() throws XMLStreamException {

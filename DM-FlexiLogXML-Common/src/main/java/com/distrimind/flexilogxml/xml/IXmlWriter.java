@@ -37,6 +37,10 @@ public interface IXmlWriter extends IXmlParser {
 									String version) throws XMLStreamException {
 		writeStartDocument(encoding.name(), version);
 	}
+	default void writeStartDocument(Charset encoding,
+									String version, boolean standalone) throws XMLStreamException {
+		writeStartDocument(encoding.name(), version, standalone);
+	}
 	default void writeStartDocument(String version)
 			throws XMLStreamException
 	{
@@ -47,8 +51,13 @@ public interface IXmlWriter extends IXmlParser {
 		writeCharacters(value);
 		writeEndElement();
 	}
+	default void writeStartDocument(String encoding,
+							String version) throws XMLStreamException
+	{
+		writeStartDocument(encoding, version, false);
+	}
 	void writeStartDocument(String encoding,
-								   String version) throws XMLStreamException;
+							String version, boolean standalone) throws XMLStreamException;
 	void writeStartElement(String localName) throws XMLStreamException;
 	void writeStartElement(String namespaceURI, String localName) throws XMLStreamException;
 	void writeStartElement(String prefix, String localName, String namespaceURI) throws XMLStreamException;
