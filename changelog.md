@@ -10,6 +10,10 @@ DM-FlexiLogXML
 
 # Changes:
 
+### 1.2.9 STABLE (2025-01-31)
+#### Internal changes
+* Optimisation of log level filter under Android
+
 ### 1.2.8 STABLE (2025-01-28)
 #### New feature(s)
 * Add standalone parameter into function writeStartDocument of interface IWXmlWriter

@@ -32,7 +32,7 @@ import org.slf4j.helpers.MessageFormatter;
 /**
  * @author Jason Mahdjoub
  * @version 1.0
- * @since DM-FlexiLogXML 7.0.0
+ * @since DM-FlexiLogXML 1.0.0
  */
 public class Logger implements org.slf4j.Logger {
 	private final String name;

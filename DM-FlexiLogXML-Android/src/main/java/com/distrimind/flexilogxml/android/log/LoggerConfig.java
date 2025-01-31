@@ -38,15 +38,22 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.function.Function;
 
+/**
+ * @author Jason Mahdjoub
+ * @version 1.0
+ * @since DM-FlexiLogXML 1.2.9
+ */
 public class LoggerConfig {
 	private static final Properties properties;
 	private static final Level defaultLogLevel;
 	private static final String headerProperty="log.level.";
 	private static volatile Map<String, Level> cache=new HashMap<>();
+	private static final Level lowerLevel;
 
 	static {
 		Level d;
 		Properties p;
+		Level min=null;
 		try (InputStream is=ContextProvider.getApplicationContext().getAssets().open("flexilogxml.android.logger.properties")){
 			if (is==null) {
 				p=null;
@@ -56,11 +63,28 @@ public class LoggerConfig {
 				p=new Properties();
 				p.load(is);
 				d = getLevelOr("log.level.root", s -> getLevelOr(headerProperty, s2 -> null));
+
+				for (Map.Entry<Object, Object> e : p.entrySet())
+				{
+					if (e.getKey() instanceof String && e.getValue() instanceof String)
+					{
+						String k=(String) e.getKey();
+						if (!headerProperty.equalsIgnoreCase(k) && !"log.level.root".equalsIgnoreCase(k))
+						{
+							String v=(String)e.getValue();
+							Level l=getLevel(v);
+							if (min==null || l.toInt()<min.toInt())
+								min=l;
+						}
+					}
+				}
 			}
 		} catch (IOException ignored) {
 			d = null;
 			p=null;
 		}
+
+		lowerLevel=min;
 		properties=p;
 		defaultLogLevel = d;
 	}
@@ -72,24 +96,31 @@ public class LoggerConfig {
 			return defaultLogLevel;
 	}
 
+	private static Level getLevel(String level) {
+		if (level != null && !level.isEmpty()) {
+			for (Level l : Level.values()) {
+				if (l.toString().equalsIgnoreCase(level))
+					return l;
+			}
+		}
+		return null;
+	}
 	private static Level getLevelOr(String property, Function<String, Level> subLevelProducer) {
 		if (properties==null)
 			return getDefaultLogLevel();
 		else {
 			String level=properties.getProperty(property, null);
-			if (level != null && !level.isEmpty()) {
-				for (Level l : Level.values()) {
-					if (l.toString().equalsIgnoreCase(level))
-						return l;
+			Level l=getLevel(level);
+			if (l==null) {
+				int i = property.lastIndexOf('.');
+				if (i <= headerProperty.length()) {
+					return subLevelProducer.apply(null);
+				} else {
+					return subLevelProducer.apply(property.substring(0, i));
 				}
 			}
-			int i = property.lastIndexOf('.');
-			if (i <= headerProperty.length()) {
-				return subLevelProducer.apply(null);
-			}
-			else {
-				return subLevelProducer.apply(property.substring(0, i));
-			}
+			else
+				return l;
 		}
 	}
 	private static class R implements Function<String, Level> {
@@ -118,7 +149,12 @@ public class LoggerConfig {
 	}
 	public static boolean isLogEnabled(String loggerName, Level level)
 	{
-		return getLogLevel(loggerName).toInt()<=level.toInt();
+		if (lowerLevel==null)
+			return getDefaultLogLevel().toInt()<=level.toInt();
+		else {
+			int l=level.toInt();
+			return (lowerLevel.toInt() <= l || getDefaultLogLevel().toInt()<=l) && getLogLevel(loggerName).toInt() <= l;
+		}
 	}
 
 }
