@@ -27,7 +27,9 @@ import com.distrimind.flexilogxml.log.DMLogger;
 import com.distrimind.flexilogxml.log.ILogFormatter;
 import com.distrimind.flexilogxml.log.LogFactory;
 import com.distrimind.flexilogxml.log.LogFormatter;
+import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
 import org.slf4j.event.Level;
 
@@ -43,7 +45,7 @@ import java.util.function.Supplier;
  */
 @SuppressWarnings("PMD")
 public class FlexiLogXML {
-	private static Function<String, Logger> defaultLoggerSupplier= (LogFactory::getLogger);
+	private static Function<String, Logger> defaultLoggerSupplier= LogFactory::getLogger;
 	private static DMLogger logger=null;
 	private static Marker marker= null;
 
@@ -52,6 +54,8 @@ public class FlexiLogXML {
 
 		setLogLevel(Level.INFO);
 	}
+
+
 
 	public static void setMarker(Marker marker)
 	{
@@ -74,7 +78,7 @@ public class FlexiLogXML {
 	public static void setLogLevel(Level level)
 	{
 		if (logger == null) {
-			logger = getLoggerInstance("[Utils]", 10, DateTimeFormatter.ofPattern("HH:mm:ss.SSSS"), level);
+			logger = getLoggerInstance("Utils");
 		}
 		else
 			logger.setLogLevel(level);
@@ -104,9 +108,9 @@ public class FlexiLogXML {
 		return defaultLoggerSupplier;
 	}
 
-	public static DMLogger getLoggerInstance(String header, int maxHeaderSize, DateTimeFormatter dateTimeFormat, Level level)
+	public static DMLogger getLoggerInstance(String name, int maxHeaderSize, DateTimeFormatter dateTimeFormat, Level level)
 	{
-		Logger logger=defaultLoggerSupplier.apply(header);
+		Logger logger=defaultLoggerSupplier.apply(name);
 		return configureLogger(logger, maxHeaderSize, dateTimeFormat, level);
 	}
 
@@ -125,7 +129,7 @@ public class FlexiLogXML {
 		return new DMLogger(logger, logFormatter, level);
 	}
 
-	public static DMLogger getLogger() {
+	public static DMLogger getLoggerInstance() {
 		return logger;
 	}
 	public static void log(Level level, Throwable throwable)
@@ -211,5 +215,34 @@ public class FlexiLogXML {
 
 	public static void setLocale(Locale locale) {
 		FlexiLogXML.locale = locale;
+	}
+
+	private static Level defaultLogLevel=Level.INFO;
+
+	public static Level getDefaultLogLevel() {
+		return defaultLogLevel;
+	}
+
+	public static void setDefaultLogLevel(Level defaultLogLevel) {
+		if (defaultLogLevel==null)
+			throw new NullPointerException();
+		FlexiLogXML.defaultLogLevel = defaultLogLevel;
+	}
+
+	public static DMLogger getLoggerInstance(Class<?> clazz)
+	{
+		return getLoggerInstance(clazz.getName());
+	}
+	public static DMLogger getLoggerInstance(Class<?> clazz, Level defaultLogLevel)
+	{
+		return getLoggerInstance(clazz.getName(), defaultLogLevel);
+	}
+	public static DMLogger getLoggerInstance(String name)
+	{
+		return getLoggerInstance(name, defaultLogLevel);
+	}
+	public static DMLogger getLoggerInstance(String name, Level defaultLogLevel)
+	{
+		return FlexiLogXML.getLoggerInstance(name, 10, DateTimeFormatter.ofPattern("HH:mm:ss.SSSS"), defaultLogLevel);
 	}
 }

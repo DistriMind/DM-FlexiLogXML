@@ -104,9 +104,10 @@ public class LogFormatter implements ILogFormatter {
 		String m=messageSupplier.get();
 		if (s.length()>0)
 			s.append(" : ");
-		s.append((arguments==null || arguments.length==0)?m:MessageFormatter.arrayFormat(m, arguments).getMessage()).append("\n");
+		s.append((arguments==null || arguments.length==0)?m:MessageFormatter.arrayFormat(m, arguments).getMessage());
 
 		if (t != null) {
+			s.append("\n");
 			appendThrowableStackTrace(s, t, dateFormatSize, maxHeaderSize, maxLevelSize);
 		}
 		return s.toString();

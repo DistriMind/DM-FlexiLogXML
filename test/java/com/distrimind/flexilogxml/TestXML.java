@@ -23,7 +23,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 package com.distrimind.flexilogxml;
 
-import com.distrimind.flexilogxml.exceptions.XMLStreamException;
 import com.distrimind.flexilogxml.xml.IXmlReader;
 import com.distrimind.flexilogxml.xml.IXmlWriter;
 import com.distrimind.flexilogxml.xml.XmlParserFactory;
@@ -84,7 +83,7 @@ public class TestXML {
 	public void testXMLAttribute()
 	{
 		try(ByteArrayOutputStream out2=new ByteArrayOutputStream()) {
-			IXmlWriter xmlWriter = XmlParserFactory.getXmlOutputFactory().getXMLWriter(false, out2);
+			IXmlWriter xmlWriter = XmlParserFactory.getXmlOutputFactory().getXMLWriter(true, out2);
 
 			// Commence le document XML
 			xmlWriter.writeStartDocument(StandardCharsets.UTF_8, "1.0", true);
@@ -99,9 +98,14 @@ public class TestXML {
 			xmlWriter.writeCharacters("Content");
 
 			xmlWriter.writeEndElement();
+			xmlWriter.writeStartElement("e2");
+			xmlWriter.writeCharacters("Content2");
+			xmlWriter.writeEndElement();
 
 			xmlWriter.writeEndDocument();
+			xmlWriter.close();
 			out2.flush();
+
 			FlexiLogXML.log(Level.INFO, new String(out2.toByteArray(), StandardCharsets.UTF_8));
 		} catch (IOException e) {
 			FlexiLogXML.log(Level.ERROR, e);

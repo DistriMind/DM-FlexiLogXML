@@ -25,6 +25,7 @@ package com.distrimind.flexilogxml.android.log;
 
 import android.util.Log;
 import org.slf4j.Marker;
+import org.slf4j.event.Level;
 import org.slf4j.helpers.FormattingTuple;
 import org.slf4j.helpers.MessageFormatter;
 
@@ -47,7 +48,7 @@ public class Logger implements org.slf4j.Logger {
 
 	@Override
 	public boolean isTraceEnabled() {
-		return Log.isLoggable(null, Log.VERBOSE);
+		return isLoggable(null, Log.VERBOSE, Level.TRACE);
 	}
 
 	@Override
@@ -59,9 +60,12 @@ public class Logger implements org.slf4j.Logger {
 		FormattingTuple ft = MessageFormatter.arrayFormat(format, arg);
 		log(marker, level, ft.getMessage(), ft.getThrowable());
 	}
-
-	private static void log(Marker marker, int level, String msg, Throwable t) {
-		String tag=marker==null?null:marker.getName();
+	private String getTag(Marker marker)
+	{
+		return marker==null?null:marker.getName();
+	}
+	private void log(Marker marker, int level, String msg, Throwable t) {
+		String tag=getTag(marker);
 		switch (level)
 		{
 			case Log.VERBOSE:
@@ -125,7 +129,7 @@ public class Logger implements org.slf4j.Logger {
 
 	@Override
 	public boolean isTraceEnabled(Marker marker) {
-		return Log.isLoggable(marker==null?null:marker.getName(), Log.VERBOSE);
+		return isLoggable(marker, Log.VERBOSE, Level.TRACE);
 	}
 
 	@Override
@@ -155,7 +159,12 @@ public class Logger implements org.slf4j.Logger {
 
 	@Override
 	public boolean isDebugEnabled() {
-		return Log.isLoggable(null, Log.DEBUG);
+		return isLoggable(null, Log.DEBUG, Level.DEBUG);
+	}
+	private boolean isLoggable(Marker marker, int intLevel, Level level)
+	{
+		String tag=getTag(marker);
+		return Log.isLoggable(tag, intLevel) || LoggerConfig.isLogEnabled(getName(), level);
 	}
 
 	@Override
@@ -185,7 +194,7 @@ public class Logger implements org.slf4j.Logger {
 
 	@Override
 	public boolean isDebugEnabled(Marker marker) {
-		return Log.isLoggable(marker==null?null:marker.getName(), Log.DEBUG);
+		return isLoggable(marker, Log.DEBUG, Level.DEBUG);
 	}
 
 	@Override
@@ -215,7 +224,7 @@ public class Logger implements org.slf4j.Logger {
 
 	@Override
 	public boolean isInfoEnabled() {
-		return Log.isLoggable(null, Log.INFO);
+		return isLoggable(null, Log.INFO, Level.INFO);
 	}
 
 	@Override
@@ -245,7 +254,7 @@ public class Logger implements org.slf4j.Logger {
 
 	@Override
 	public boolean isInfoEnabled(Marker marker) {
-		return Log.isLoggable(marker==null?null:marker.getName(), Log.INFO);
+		return isLoggable(marker, Log.INFO, Level.INFO);
 	}
 
 	@Override
@@ -275,7 +284,7 @@ public class Logger implements org.slf4j.Logger {
 
 	@Override
 	public boolean isWarnEnabled() {
-		return Log.isLoggable(null, Log.WARN);
+		return isLoggable(null, Log.WARN, Level.WARN);
 	}
 
 	@Override
@@ -305,7 +314,7 @@ public class Logger implements org.slf4j.Logger {
 
 	@Override
 	public boolean isWarnEnabled(Marker marker) {
-		return Log.isLoggable(marker==null?null:marker.getName(), Log.WARN);
+		return isLoggable(marker, Log.WARN, Level.WARN);
 	}
 
 	@Override
@@ -335,7 +344,7 @@ public class Logger implements org.slf4j.Logger {
 
 	@Override
 	public boolean isErrorEnabled() {
-		return Log.isLoggable(null, Log.ERROR);
+		return isLoggable(null, Log.ERROR, Level.ERROR);
 	}
 
 	@Override
@@ -365,7 +374,7 @@ public class Logger implements org.slf4j.Logger {
 
 	@Override
 	public boolean isErrorEnabled(Marker marker) {
-		return Log.isLoggable(marker==null?null:marker.getName(), Log.ERROR);
+		return isLoggable(marker, Log.ERROR, Level.ERROR);
 	}
 
 	@Override

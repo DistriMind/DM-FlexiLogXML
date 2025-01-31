@@ -26,6 +26,7 @@ package com.distrimind.flexilogxml.log;
 import com.distrimind.flexilogxml.UtilClassLoader;
 import com.distrimind.flexilogxml.systeminfo.OS;
 import com.distrimind.flexilogxml.systeminfo.OSVersion;
+import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -44,6 +45,7 @@ public class LogFactory {
 	final static Class<?> androidLoggerClass;
 	final static Constructor<?> androidLoggerConstructor;
 	final static Class<?> jdk14LoggerAdapterClass;
+	private static final ILoggerFactory loggerFactory;
 	static
 	{
 		Class<?> clazz;
@@ -63,13 +65,21 @@ public class LogFactory {
 		} catch (ClassNotFoundException ignored) {
 
 		}
+
 		jdk14LoggerAdapterClass=clazz;
+		if (OSVersion.getCurrentOSVersion().getOS()!= OS.ANDROID)
+		{
+			loggerFactory=LoggerFactory.getILoggerFactory();
+
+		}
+		else
+			loggerFactory=null;
 	}
 	public static Logger getLogger(String name) {
 		if (OSVersion.getCurrentOSVersion().getOS()== OS.ANDROID)
 		{
 			if (androidLoggerConstructor==null)
-				throw new RuntimeException();
+				throw new RuntimeException("Please use DM-FlexiLogXML-Android under android");
 			try {
 				return (Logger)androidLoggerConstructor.newInstance(name);
 			} catch (InstantiationException | IllegalAccessException |
@@ -77,8 +87,9 @@ public class LogFactory {
 				throw new RuntimeException(e);
 			}
 		}
-		else
-			return LoggerFactory.getLogger(name);
+		else {
+			return loggerFactory.getLogger(name);
+		}
 	}
 	public static Logger getLogger(Class<?> clazz) {
 		return getLogger(clazz.getName());

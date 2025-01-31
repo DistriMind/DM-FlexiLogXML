@@ -14,7 +14,7 @@ dependencies {
     api project(':DM-FlexiLogXML-Common')
     testImplementation project(':DM-FlexiLogXML-Common')
 
-    testImplementation jlibs.slf4Jdk14
+    testImplementation jlibs.logback.classic
     testImplementation jlibs.testng
 }
 

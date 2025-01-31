@@ -49,7 +49,7 @@ public class XmlWriter extends AbstractXmlWriter {
 	protected void writeStartDocumentImpl(String encoding, String version, boolean standalone) throws XMLStreamException {
 		try {
 			if (standalone)
-				writer.writeDTD("<?xml version=\"1.0\" encoding=\""+encoding+"\" standalone=\"yes\"?>");
+				writer.writeDTD("<?xml version='1.0' encoding='"+encoding+"' standalone='yes' ?>");
 			else
 				writer.writeStartDocument(encoding, version);
 

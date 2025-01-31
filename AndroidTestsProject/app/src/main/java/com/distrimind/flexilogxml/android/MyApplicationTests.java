@@ -12,6 +12,8 @@ public class MyApplicationTests extends Application {
     @Override
     public void onTerminate() {
         super.onTerminate();
+
         ContextProvider.applicationClosed();
+
     }
 }

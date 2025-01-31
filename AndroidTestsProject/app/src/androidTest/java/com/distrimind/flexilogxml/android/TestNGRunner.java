@@ -50,7 +50,6 @@ public class TestNGRunner {
 
 	@Test
 	public void allTestNG() throws Throwable {
-		Log.w("testDirectAndroidLog", new IllegalAccessError());
 		tests.runTestNGWithJunit("TestUtils");
 	}
 }

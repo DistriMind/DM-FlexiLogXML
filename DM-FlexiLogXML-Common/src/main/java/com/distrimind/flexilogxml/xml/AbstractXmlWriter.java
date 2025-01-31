@@ -94,26 +94,30 @@ public abstract class AbstractXmlWriter extends AbstractXmlParser implements IXm
 	public void writeStartElement(String namespaceURI, String localName) throws XMLStreamException {
 		writeStartIndent();
 		incrementLevel();
-		writeStartElementImpl(namespaceURI, localName);
+		writeStartElementImpl(getNamespaceURI(namespaceURI), localName);
 	}
 
 	@Override
 	public void writeStartElement(String prefix, String localName, String namespaceURI) throws XMLStreamException {
 		writeStartIndent();
 		incrementLevel();
-		writeStartElementImpl(prefix, localName, namespaceURI);
+		writeStartElementImpl(prefix, localName, getNamespaceURI(namespaceURI));
 	}
 
 	@Override
 	public void writeEmptyElement(String namespaceURI, String localName) throws XMLStreamException {
 		writeStartIndent();
-		writeEmptyElementImpl(namespaceURI, localName);
+		writeEmptyElementImpl(getNamespaceURI(namespaceURI), localName);
 		writeEndIndent();
+	}
+	private String getNamespaceURI(String namespaceURI)
+	{
+		return namespaceURI.trim().isEmpty()?null:namespaceURI;
 	}
 	@Override
 	public void writeEmptyElement(String prefix, String localName, String namespaceURI) throws XMLStreamException {
 		writeStartIndent();
-		writeEmptyElementImpl(prefix, localName, namespaceURI);
+		writeEmptyElementImpl(prefix, localName, getNamespaceURI(namespaceURI));
 		writeEndIndent();
 	}
 

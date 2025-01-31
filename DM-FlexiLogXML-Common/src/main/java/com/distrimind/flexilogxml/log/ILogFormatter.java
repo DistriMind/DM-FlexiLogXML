@@ -71,7 +71,8 @@ public interface ILogFormatter {
 					}
 					break;
 				case DEBUG:
-					if (logger.isDebugEnabled()) {
+					if (logger.isDebugEnabled())
+					{
 						if (t==null)
 							logger.debug(messageSupplier.get());
 						else
@@ -117,7 +118,8 @@ public interface ILogFormatter {
 					}
 					break;
 				case DEBUG:
-					if (logger.isDebugEnabled(marker)) {
+					if (logger.isDebugEnabled(marker))
+					{
 						if (t==null)
 							logger.debug(marker, messageSupplier.get());
 						else

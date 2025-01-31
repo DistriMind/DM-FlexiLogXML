@@ -102,6 +102,7 @@ public class XmlWriter extends AbstractXmlWriter {
 	@Override
 	protected void writeEmptyElementImpl(String namespaceURI, String localName) throws XMLStreamException {
 		try {
+
 			serializer.startTag(namespaceURI, localName);
 			if (namespaceURI!=null)
 				writeDefaultNamespace(namespaceURI);
@@ -110,6 +111,7 @@ public class XmlWriter extends AbstractXmlWriter {
 			throw new XMLStreamException("Error writing empty element", e);
 		}
 	}
+
 	@Override
 	protected void writeEmptyElementImpl(String prefix, String localName, String namespaceURI) throws XMLStreamException {
 		try {
@@ -134,14 +136,21 @@ public class XmlWriter extends AbstractXmlWriter {
 			throw new XMLStreamException("Error writing empty element", e);
 		}
 	}
-
+	private String getNameSpaceURI(QName qName)
+	{
+		String ns=qName.getNamespaceURI();
+		if (Constants.NULL_NS_URI.equals(ns))
+			return null;
+		else
+			return ns;
+	}
 	@Override
 	protected void writeEndElementImpl() throws XMLStreamException {
 		if (startedTags.isEmpty())
 			throw new XMLStreamException("Error ending element");
 		try {
 			QName q=startedTags.remove(startedTags.size()-1);
-			String ns=q.getNamespaceURI();
+			String ns=getNameSpaceURI(q);
 			serializer.endTag(ns, q.getLocalPart());
 		} catch (IOException e) {
 			throw new RuntimeException(e);

@@ -22,7 +22,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.*/
 
 package com.distrimind.flexilogxml;
 
-import com.distrimind.flexilogxml.systeminfo.OS;
+import com.distrimind.flexilogxml.log.DMLogger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -34,17 +34,31 @@ import org.slf4j.event.Level;
  * @since Utils 5.26.0
  */
 public class TestLog {
-
+	private static final DMLogger log=FlexiLogXML.getLoggerInstance(TestLog.class);
 	private void testCausedBy() throws IllegalAccessException {
 		throw new IllegalAccessException();
 	}
+	private boolean debugMessage1=false;
+	private boolean debugMessage2=false;
 	@Test
 	@SuppressWarnings("PMD.GuardLogStatement")
 	public void testLog()
 	{
-  		FlexiLogXML.log(Level.INFO, "One message");
+		FlexiLogXML.log(Level.INFO, "One message");
 		FlexiLogXML.log(Level.INFO, "One message with parameter {}", "param1");
 		FlexiLogXML.log(Level.TRACE, "One message with parameter {}", "param1");
+		log.debug(() -> {
+			debugMessage2=true;
+			return "debug message message2";
+		});
+		Assert.assertTrue(debugMessage2);
+
+		FlexiLogXML.log(Level.DEBUG, () -> {
+			debugMessage1=true;
+			return "debug message message1";
+		});
+		Assert.assertTrue(debugMessage1);
+
 		FlexiLogXML.log(Level.INFO, () -> "message1");
 		FlexiLogXML.log(Level.WARN, () -> "message2");
 		FlexiLogXML.log(Level.ERROR, () -> "message3");
