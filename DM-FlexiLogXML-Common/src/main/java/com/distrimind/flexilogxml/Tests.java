@@ -26,8 +26,8 @@ package com.distrimind.flexilogxml;
 import com.distrimind.flexilogxml.exceptions.DMIOException;
 
 import com.distrimind.flexilogxml.log.Level;
-import org.slf4j.Marker;
-import org.slf4j.MarkerFactory;
+import com.distrimind.flexilogxml.log.Marker;
+import com.distrimind.flexilogxml.log.MarkerFactory;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -296,7 +296,7 @@ public class Tests {
         Marker oldMarker= FlexiLogXML.getMarker();
         try {
             if (markerName!=null)
-                FlexiLogXML.setMarker(MarkerFactory.getMarker(markerName));
+                FlexiLogXML.setMarker(MarkerFactory.getInstance().getMarker(markerName));
             try {
                 Object testNG = runTestNG();
                 junitAssertFalseMethod.invoke(null, "TestNG method(s) skipped into "+this, hasSkipMethod.invoke(testNG));

@@ -24,7 +24,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 package com.distrimind.flexilogxml.log;
 
 import com.distrimind.flexilogxml.FlexiLogXML;
-import org.slf4j.Marker;
 
 import java.util.Arrays;
 

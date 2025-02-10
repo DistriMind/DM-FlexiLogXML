@@ -25,7 +25,6 @@ package com.distrimind.flexilogxml.log;
 import com.distrimind.flexilogxml.systeminfo.OS;
 import com.distrimind.flexilogxml.systeminfo.OSVersion;
 import org.slf4j.Logger;
-import org.slf4j.Marker;
 import org.slf4j.helpers.MessageFormatter;
 
 import java.io.PrintWriter;

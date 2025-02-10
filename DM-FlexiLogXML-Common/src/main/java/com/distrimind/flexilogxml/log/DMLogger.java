@@ -24,7 +24,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 package com.distrimind.flexilogxml.log;
 
 import org.slf4j.Logger;
-import org.slf4j.Marker;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -438,7 +437,7 @@ public class DMLogger {
 	}
 
 	public boolean isTraceEnabled(Marker marker) {
-		return logger.isTraceEnabled(marker);
+		return logger.isTraceEnabled(marker.getMarker());
 	}
 
 	public boolean isDebugEnabled() {
@@ -446,7 +445,7 @@ public class DMLogger {
 	}
 
 	public boolean isDebugEnabled(Marker marker) {
-		return logger.isDebugEnabled(marker);
+		return logger.isDebugEnabled(marker.getMarker());
 	}
 
 	public boolean isInfoEnabled() {
@@ -454,7 +453,7 @@ public class DMLogger {
 	}
 
 	public boolean isInfoEnabled(Marker marker) {
-		return logger.isInfoEnabled(marker);
+		return logger.isInfoEnabled(marker.getMarker());
 	}
 
 	public boolean isWarnEnabled() {
@@ -462,7 +461,7 @@ public class DMLogger {
 	}
 
 	public boolean isWarnEnabled(Marker marker) {
-		return logger.isWarnEnabled(marker);
+		return logger.isWarnEnabled(marker.getMarker());
 	}
 
 	public boolean isErrorEnabled() {
@@ -470,7 +469,7 @@ public class DMLogger {
 	}
 
 	public boolean isErrorEnabled(Marker marker) {
-		return logger.isErrorEnabled(marker);
+		return logger.isErrorEnabled(marker.getMarker());
 	}
 
 	public void addHandler(Handler handler)

@@ -24,7 +24,6 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 package com.distrimind.flexilogxml.log;
 
 import org.slf4j.Logger;
-import org.slf4j.Marker;
 
 import java.time.ZoneId;
 import java.util.function.Supplier;
@@ -93,44 +92,44 @@ public interface ILogFormatter {
 		{
 			switch (level) {
 				case ERROR:
-					if (logger.isErrorEnabled(marker)) {
+					if (logger.isErrorEnabled(marker.getMarker())) {
 						if (t==null)
-							logger.error(marker, messageSupplier.get());
+							logger.error(marker.getMarker(), messageSupplier.get());
 						else
-							logger.error(marker, messageSupplier.get(), t);
+							logger.error(marker.getMarker(), messageSupplier.get(), t);
 					}
 					break;
 				case WARN:
-					if (logger.isWarnEnabled(marker)) {
+					if (logger.isWarnEnabled(marker.getMarker())) {
 						if (t==null)
-							logger.warn(marker, messageSupplier.get());
+							logger.warn(marker.getMarker(), messageSupplier.get());
 						else
-							logger.warn(marker, messageSupplier.get(), t);
+							logger.warn(marker.getMarker(), messageSupplier.get(), t);
 					}
 					break;
 				case INFO:
-					if (logger.isInfoEnabled(marker)) {
+					if (logger.isInfoEnabled(marker.getMarker())) {
 						if (t==null)
-							logger.info(marker, messageSupplier.get());
+							logger.info(marker.getMarker(), messageSupplier.get());
 						else
-							logger.info(marker, messageSupplier.get(), t);
+							logger.info(marker.getMarker(), messageSupplier.get(), t);
 					}
 					break;
 				case DEBUG:
-					if (logger.isDebugEnabled(marker))
+					if (logger.isDebugEnabled(marker.getMarker()))
 					{
 						if (t==null)
-							logger.debug(marker, messageSupplier.get());
+							logger.debug(marker.getMarker(), messageSupplier.get());
 						else
-							logger.debug(marker, messageSupplier.get(), t);
+							logger.debug(marker.getMarker(), messageSupplier.get(), t);
 					}
 					break;
 				case TRACE:
-					if (logger.isTraceEnabled(marker)) {
+					if (logger.isTraceEnabled(marker.getMarker())) {
 						if (t==null)
-							logger.trace(marker, messageSupplier.get());
+							logger.trace(marker.getMarker(), messageSupplier.get());
 						else
-							logger.trace(marker, messageSupplier.get(), t);
+							logger.trace(marker.getMarker(), messageSupplier.get(), t);
 					}
 					break;
 			}

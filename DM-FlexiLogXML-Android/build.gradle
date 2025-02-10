@@ -3,6 +3,7 @@ group = 'com.distrimind.flexilogxml.android'
 
 dependencies {
     api project(':DM-FlexiLogXML-Common')
+    implementation jlibs.slf4jApi
 
     compileOnly jlibs.androidStub
     compileOnly jlibs.xmlpull

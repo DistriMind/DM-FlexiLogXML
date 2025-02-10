@@ -25,7 +25,6 @@ package com.distrimind.flexilogxml;
 
 import com.distrimind.flexilogxml.log.*;
 import org.slf4j.Logger;
-import org.slf4j.Marker;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
