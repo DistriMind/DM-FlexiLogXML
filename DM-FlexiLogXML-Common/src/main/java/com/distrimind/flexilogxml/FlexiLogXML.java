@@ -41,7 +41,7 @@ import java.util.function.Supplier;
 /**
  * 
  * @author Jason Mahdjoub
- * @version 3.9
+ * @version 1.0
  */
 @SuppressWarnings("PMD")
 public class FlexiLogXML {

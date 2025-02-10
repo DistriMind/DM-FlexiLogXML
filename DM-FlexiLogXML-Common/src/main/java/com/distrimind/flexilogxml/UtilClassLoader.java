@@ -43,7 +43,7 @@ import java.util.Objects;
  * @author Fabien Michel
  * @author Jacques Ferber
  * @author Jason Mahdjoub
- * @version 6.0
+ * @version 1.0
  * 
  */
 public class UtilClassLoader extends URLClassLoader{ // NO_UCD

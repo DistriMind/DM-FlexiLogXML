@@ -40,7 +40,7 @@ import java.util.function.Supplier;
 /**
  * @author Jason Mahdjoub
  * @version 1.0
- * @since Utils 5.26.0
+ * @since DM-FlexiLogXML 1.0
  */
 public class LogFormatter implements ILogFormatter {
 	private static final int HEADER_SIZE=56;

@@ -40,8 +40,8 @@ import static com.distrimind.flexilogxml.systeminfo.OSVersion.getCurrentOSVersio
  * Set of functions giving information about the current running OS
  * 
  * @author Jason Mahdjoub
- * @version 2.2
- * @since Utils 1.0
+ * @version 1.0
+ * @since DM-FlexiLogXML 1.0
  *
  */
 @SuppressWarnings("PMD")

@@ -37,7 +37,7 @@ class Literals
 /**
  * @author Jason Mahdjoub
  * @version 1.1
- * @since Utils 3.17
+ * @since DM-FlexiLogXML 1.0
  */
 public enum OSVersion {
 

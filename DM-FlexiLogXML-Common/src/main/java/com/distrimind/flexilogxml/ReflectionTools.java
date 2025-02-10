@@ -37,7 +37,7 @@ import java.util.function.Supplier;
  * 
  * @author Jason Mahdjoub
  * @version 1.0
- * @since Utils 1.7
+ * @since DM-FlexiLogXML 1.0
  */
 @SuppressWarnings("PMD")
 public class ReflectionTools {

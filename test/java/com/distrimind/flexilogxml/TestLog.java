@@ -31,7 +31,7 @@ import org.slf4j.event.Level;
 /**
  * @author Jason Mahdjoub
  * @version 1.0
- * @since Utils 5.26.0
+ * @since DM-FlexiLogXML 1.0
  */
 public class TestLog {
 	private static final DMLogger log=FlexiLogXML.getLoggerInstance(TestLog.class);

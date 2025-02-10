@@ -28,7 +28,7 @@ import com.distrimind.flexilogxml.FlexiLogXML;
 /**
  * @author Jason Mahdjoub
  * @version 1.0
- * @since Utils 5.24.1
+ * @since DM-FlexiLogXML 1.0
  */
 public class SystemInfo {
 
