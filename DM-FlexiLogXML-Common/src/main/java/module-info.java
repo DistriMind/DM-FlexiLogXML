@@ -29,5 +29,6 @@ module FlexiLogXML_Common {
 	exports com.distrimind.flexilogxml.exceptions;
 	exports com.distrimind.flexilogxml.xml;
 	exports com.distrimind.flexilogxml.log;
+	exports com.distrimind.flexilogxml.concurrent;
 
 }
