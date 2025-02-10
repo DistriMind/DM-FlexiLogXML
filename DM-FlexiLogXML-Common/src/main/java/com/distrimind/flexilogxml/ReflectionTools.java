@@ -25,9 +25,9 @@ package com.distrimind.flexilogxml;
 
 
 import com.distrimind.flexilogxml.exceptions.DMIOException;
+import com.distrimind.flexilogxml.log.Level;
 import com.distrimind.flexilogxml.systeminfo.OS;
 import com.distrimind.flexilogxml.systeminfo.OSVersion;
-import org.slf4j.event.Level;
 
 import java.lang.reflect.*;
 import java.util.function.Supplier;

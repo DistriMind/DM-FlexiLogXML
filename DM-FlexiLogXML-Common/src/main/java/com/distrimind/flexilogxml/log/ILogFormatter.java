@@ -25,7 +25,6 @@ package com.distrimind.flexilogxml.log;
 
 import org.slf4j.Logger;
 import org.slf4j.Marker;
-import org.slf4j.event.Level;
 
 import java.time.ZoneId;
 import java.util.function.Supplier;

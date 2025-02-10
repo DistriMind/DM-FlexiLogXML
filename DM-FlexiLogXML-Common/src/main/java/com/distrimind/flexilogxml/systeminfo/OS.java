@@ -26,7 +26,7 @@ package com.distrimind.flexilogxml.systeminfo;
 
 import com.distrimind.flexilogxml.UtilClassLoader;
 import com.distrimind.flexilogxml.FlexiLogXML;
-import org.slf4j.event.Level;
+import com.distrimind.flexilogxml.log.Level;
 
 import java.io.*;
 import java.util.ArrayList;

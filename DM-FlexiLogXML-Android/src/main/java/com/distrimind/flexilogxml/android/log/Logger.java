@@ -24,8 +24,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 package com.distrimind.flexilogxml.android.log;
 
 import android.util.Log;
+import com.distrimind.flexilogxml.log.Level;
 import org.slf4j.Marker;
-import org.slf4j.event.Level;
 import org.slf4j.helpers.FormattingTuple;
 import org.slf4j.helpers.MessageFormatter;
 

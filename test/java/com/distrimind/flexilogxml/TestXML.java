@@ -23,11 +23,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 package com.distrimind.flexilogxml;
 
+import com.distrimind.flexilogxml.log.Level;
 import com.distrimind.flexilogxml.xml.IXmlReader;
 import com.distrimind.flexilogxml.xml.IXmlWriter;
 import com.distrimind.flexilogxml.xml.XmlParserFactory;
 
-import org.slf4j.event.Level;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

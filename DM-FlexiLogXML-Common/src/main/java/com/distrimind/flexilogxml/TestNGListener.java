@@ -23,7 +23,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 package com.distrimind.flexilogxml;
 
-import org.slf4j.event.Level;
+
+import com.distrimind.flexilogxml.log.Level;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

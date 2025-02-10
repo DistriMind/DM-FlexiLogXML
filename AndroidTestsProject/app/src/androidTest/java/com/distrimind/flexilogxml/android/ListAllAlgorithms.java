@@ -1,10 +1,10 @@
 package com.distrimind.flexilogxml.android;
 
 import com.distrimind.flexilogxml.FlexiLogXML;
+import com.distrimind.flexilogxml.log.Level;
 
 import org.junit.Test;
 import org.slf4j.MarkerFactory;
-import org.slf4j.event.Level;
 
 import java.security.Provider;
 import java.security.Security;

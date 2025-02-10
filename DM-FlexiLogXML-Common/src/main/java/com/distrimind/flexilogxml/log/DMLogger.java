@@ -25,7 +25,6 @@ package com.distrimind.flexilogxml.log;
 
 import org.slf4j.Logger;
 import org.slf4j.Marker;
-import org.slf4j.event.Level;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -92,7 +91,7 @@ public class DMLogger {
 	{
 		LogRecord r=_r;
 		for (Handler h : ch) {
-			if (h.getDefaultLevel().compareTo(level) < 0)
+			if (level.compareTo(h.getDefaultLevel()) >= 0)
 				continue;
 			if (r == null)
 				r = new LogRecord(level, marker, messageSupplier.get(), t, arguments);
@@ -431,7 +430,7 @@ public class DMLogger {
 
 
 	public boolean isEnabledForLevel(Level level) {
-		return logger.isEnabledForLevel(level);
+		return logger.isEnabledForLevel(level.toSLF4JLevel());
 	}
 
 	public boolean isTraceEnabled() {

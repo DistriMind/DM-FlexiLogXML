@@ -26,7 +26,7 @@ package com.distrimind.flexilogxml.android;
 import android.app.Application;
 import android.content.Context;
 import com.distrimind.flexilogxml.FlexiLogXML;
-import org.slf4j.event.Level;
+import com.distrimind.flexilogxml.log.Level;
 
 /**
  * @author Jason Mahdjoub

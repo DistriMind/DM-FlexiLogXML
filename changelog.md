@@ -1,6 +1,6 @@
 DM-FlexiLogXML
 =====
-1.3.2 STABLE 
+1.4.0 STABLE 
 
 # Creator(s):
 * Jason MAHDJOUB
@@ -10,6 +10,10 @@ DM-FlexiLogXML
 
 # Changes:
 
+### 1.4.0 STABLE (2025-02-10)
+#### Internal changes (s)
+* Use FlexiLogXML Level instead of SLF4J Level
+ 
 ### 1.3.2 STABLE (2025-02-10)
 #### New feature(s)
 * Add ThreadType enum types that permits to manage thread, virtual threads, or virtual threads only if the system permits it

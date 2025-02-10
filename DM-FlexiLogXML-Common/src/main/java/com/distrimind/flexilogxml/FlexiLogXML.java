@@ -23,15 +23,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 package com.distrimind.flexilogxml;
 
-import com.distrimind.flexilogxml.log.DMLogger;
-import com.distrimind.flexilogxml.log.ILogFormatter;
-import com.distrimind.flexilogxml.log.LogFactory;
-import com.distrimind.flexilogxml.log.LogFormatter;
-import org.slf4j.ILoggerFactory;
+import com.distrimind.flexilogxml.log.*;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.slf4j.Marker;
-import org.slf4j.event.Level;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;

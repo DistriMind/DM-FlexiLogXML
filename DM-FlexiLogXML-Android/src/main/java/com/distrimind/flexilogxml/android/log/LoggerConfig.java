@@ -28,8 +28,7 @@ package com.distrimind.flexilogxml.android.log;
 
 import com.distrimind.flexilogxml.FlexiLogXML;
 import com.distrimind.flexilogxml.android.ContextProvider;
-
-import org.slf4j.event.Level;
+import com.distrimind.flexilogxml.log.Level;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -73,7 +72,7 @@ public class LoggerConfig {
 						{
 							String v=(String)e.getValue();
 							Level l=getLevel(v);
-							if (min==null || l.toInt()<min.toInt())
+							if (min==null || l.getLevelInt()<min.getLevelInt())
 								min=l;
 						}
 					}
@@ -150,10 +149,10 @@ public class LoggerConfig {
 	public static boolean isLogEnabled(String loggerName, Level level)
 	{
 		if (lowerLevel==null)
-			return getDefaultLogLevel().toInt()<=level.toInt();
+			return getDefaultLogLevel().getLevelInt()<=level.getLevelInt();
 		else {
-			int l=level.toInt();
-			return (lowerLevel.toInt() <= l || getDefaultLogLevel().toInt()<=l) && getLogLevel(loggerName).toInt() <= l;
+			int l=level.getLevelInt();
+			return (lowerLevel.getLevelInt() <= l || getDefaultLogLevel().getLevelInt()<=l) && getLogLevel(loggerName).getLevelInt() <= l;
 		}
 	}
 

@@ -25,7 +25,7 @@ package com.distrimind.flexilogxml.desktop;
 
 import com.distrimind.flexilogxml.Tests;
 import com.distrimind.flexilogxml.FlexiLogXML;
-import org.slf4j.event.Level;
+import com.distrimind.flexilogxml.log.Level;
 
 import java.io.File;
 import java.io.IOException;

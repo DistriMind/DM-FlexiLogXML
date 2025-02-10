@@ -25,7 +25,6 @@ package com.distrimind.flexilogxml.log;
 
 import com.distrimind.flexilogxml.FlexiLogXML;
 import org.slf4j.Marker;
-import org.slf4j.event.Level;
 
 import java.util.Arrays;
 
@@ -40,7 +39,7 @@ public class LogRecord {
 	private final String message;
 	private final Throwable t;
 	private final Object[] arguments;
-	private long createdOnUTC;
+	private final long createdOnUTC;
 	public LogRecord(Level level, String message) {
 		this(level, FlexiLogXML.getMarker(), message, null, null);
 	}

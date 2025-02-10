@@ -25,9 +25,9 @@ package com.distrimind.flexilogxml;
 
 import com.distrimind.flexilogxml.exceptions.DMIOException;
 
+import com.distrimind.flexilogxml.log.Level;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
-import org.slf4j.event.Level;
 
 import java.io.File;
 import java.io.FileWriter;
