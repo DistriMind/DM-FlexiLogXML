@@ -26,7 +26,7 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 /**
  * @author Jason Mahdjoub
  * @version 1.0
- * @since Utils 5.24.1
+ * @since DM-FlexiLogXML 1.0
  */
 public enum State {
 	ENABLED,

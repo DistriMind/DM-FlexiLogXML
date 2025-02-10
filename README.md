@@ -16,19 +16,19 @@ Adapt into your build.gradle file, the next code :
 	    ...
 	    dependencies {
 		    ...
-		    api(group:'com.distrimind.flexilogxml.desktop', name: 'DM-FlexiLogXML-Desktop', version: '1.0.0-STABLE')
+		    api(group:'com.distrimind.flexilogxml.desktop', name: 'DM-FlexiLogXML-Desktop', version: '1.3.0-STABLE')
 		    ...
 	    }
 	    ...
     ```
 
- - When using DM-FlexiLogXML into android environment, please add this dependency (minimum Java version is 11) :
+ - When using DM-FlexiLogXML into android environment, please add this dependency (minimum Android API version is 26) :
 
     ```
 	    ...
 	    dependencies {
 		    ...
-		    implementation(group:'com.distrimind.flexilogxml.android', name: 'DM-FlexiLogXML-Android', version: '1.0.0-STABLE')
+		    implementation(group:'com.distrimind.flexilogxml.android', name: 'DM-FlexiLogXML-Android', version: '1.3.0-STABLE')
 		    ...
 	    }
 	    ...
@@ -60,7 +60,7 @@ Adapt into your pom.xml file, the next code :
                 <dependency>
                     <groupId>com.distrimind.flexilogxml.desktop</groupId>
                     <artifactId>DM-FlexiLogXML-Desktop</artifactId>
-                    <version>1.0.0-STABLE</version>
+                    <version>1.3.0-STABLE</version>
                 </dependency>
                 ...
             </dependencies>
@@ -69,13 +69,13 @@ Adapt into your pom.xml file, the next code :
         ...
     ```
    
- - When using DM-FlexiLogXML into android environment, please add this dependency (minimum Java version is 11) :
+ - When using DM-FlexiLogXML into android environment, please add this dependency (minimum Android API version is 26) :
     ```
         ...
         <dependency>
             <groupId>com.distrimind.flexilogxml.android</groupId>
             <artifactId>DM-FlexiLogXML-Android</artifactId>
-            <version>1.0.0-STABLE</version>
+            <version>1.3.0-STABLE</version>
         </dependency>
         ...
     ```
@@ -94,36 +94,6 @@ Adapt into your pom.xml file, the next code :
         ...		
     ```
 To know what last version has been uploaded, please refer to versions available into [this repository](https://artifactory.distri-mind.fr/ui/native/DistriMind-Public/com/distrimind/flexilogxml/DM-FlexiLogXML-Core/)
-
-
-
-
-## With Gradle :
-
-Adapt into your build.gradle file, the next code :
-```
-	...
-	dependencies {
-		...
-		api(group:'com.distrimind.flexilogxml', name: 'DM-FlexiLogXML', version: '1.0.0-STABLE')
-		...
-	}
-	...
-```
-Librairies are available on Maven Central. You can check signatures of dependencies with this [public GPG key](key-2023-10-09.pub). You can also use the next repository : 
-```
-	...
-	repositories {
-		...
-		maven {
-	       		url "https://artifactory.distri-mind.fr:443/artifactory/gradle-release/"
-	   	}
-		...
-	}
-	...
-```
-
-To know what last version has been uploaded, please refer to versions availables into [this repository](https://artifactory.distri-mind.fr/artifactory/DistriMind-Public/com/distrimind/util/Utils/)
 
 # License
 
