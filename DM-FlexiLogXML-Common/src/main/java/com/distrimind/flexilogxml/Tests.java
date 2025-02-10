@@ -296,7 +296,7 @@ public class Tests {
         Marker oldMarker= FlexiLogXML.getMarker();
         try {
             if (markerName!=null)
-                FlexiLogXML.setMarker(MarkerFactory.getInstance().getMarker(markerName));
+                FlexiLogXML.setMarker(MarkerFactory.getNewInstance().getMarker(markerName));
             try {
                 Object testNG = runTestNG();
                 junitAssertFalseMethod.invoke(null, "TestNG method(s) skipped into "+this, hasSkipMethod.invoke(testNG));

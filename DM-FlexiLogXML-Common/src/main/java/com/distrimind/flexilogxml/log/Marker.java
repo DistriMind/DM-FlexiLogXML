@@ -29,58 +29,58 @@ import java.util.Iterator;
 import java.util.Objects;
 
 public class Marker {
-	private final org.slf4j.Marker marker;
+	private final org.slf4j.Marker slf4jMarker;
 
 	public Marker(org.slf4j.Marker marker) {
-		this.marker = marker;
+		this.slf4jMarker = marker;
 	}
 
 	org.slf4j.Marker getMarker() {
-		return marker;
+		return slf4jMarker;
 	}
 
 	public String getName() {
-		return marker.getName();
+		return slf4jMarker.getName();
 	}
 
 	public boolean remove(org.slf4j.Marker reference) {
-		return marker.remove(reference);
+		return slf4jMarker.remove(reference);
 	}
 
 	public Iterator<org.slf4j.Marker> iterator() {
-		return marker.iterator();
+		return slf4jMarker.iterator();
 	}
 
 	public boolean contains(String name) {
-		return marker.contains(name);
+		return slf4jMarker.contains(name);
 	}
 
 	public boolean hasReferences() {
-		return marker.hasReferences();
+		return slf4jMarker.hasReferences();
 	}
 
 	@Deprecated
 	public boolean hasChildren() {
-		return marker.hasChildren();
+		return slf4jMarker.hasChildren();
 	}
 
 	public boolean contains(org.slf4j.Marker other) {
-		return marker.contains(other);
+		return slf4jMarker.contains(other);
 	}
 
 	public void add(org.slf4j.Marker reference) {
-		marker.add(reference);
+		slf4jMarker.add(reference);
 	}
 
 	@Override
 	public boolean equals(Object o) {
 		if (o == null || getClass() != o.getClass()) return false;
 		Marker marker1 = (Marker) o;
-		return Objects.equals(marker, marker1.marker);
+		return Objects.equals(slf4jMarker, marker1.slf4jMarker);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hashCode(marker);
+		return Objects.hashCode(slf4jMarker);
 	}
 }

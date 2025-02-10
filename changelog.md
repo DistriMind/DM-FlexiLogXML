@@ -1,6 +1,6 @@
 DM-FlexiLogXML
 =====
-1.4.1 STABLE 
+1.4.2 STABLE 
 
 # Creator(s):
 * Jason MAHDJOUB
@@ -10,7 +10,7 @@ DM-FlexiLogXML
 
 # Changes:
 
-### 1.4.1 STABLE (2025-02-10)
+### 1.4.2 STABLE (2025-02-10)
 #### Internal changes (s)
 * Use FlexiLogXML Level instead of SLF4J Level
 * Use FlexiLogXML Marker instead of SLF4J Marker

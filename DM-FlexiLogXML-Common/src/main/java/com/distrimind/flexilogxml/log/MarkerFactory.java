@@ -28,35 +28,35 @@ package com.distrimind.flexilogxml.log;
 import org.slf4j.IMarkerFactory;
 
 public class MarkerFactory {
-	private final IMarkerFactory markerFactory;
+	private final IMarkerFactory slf4jMarkerFactory;
 
 	MarkerFactory(IMarkerFactory markerFactory) {
-		this.markerFactory = markerFactory;
+		this.slf4jMarkerFactory = markerFactory;
 	}
-	private static final MarkerFactory singleton=getInstance();
+	private static final MarkerFactory singleton= getNewInstance();
 	public static MarkerFactory getSingleton()
 	{
 		return singleton;
 	}
-	public static MarkerFactory getInstance()
+	public static MarkerFactory getNewInstance()
 	{
 		return new MarkerFactory(org.slf4j.MarkerFactory.getIMarkerFactory());
 	}
 
 	public Marker getMarker(String name)
 	{
-		return new Marker(markerFactory.getMarker(name));
+		return new Marker(slf4jMarkerFactory.getMarker(name));
 	}
 
 	public boolean detachMarker(String name) {
-		return markerFactory.detachMarker(name);
+		return slf4jMarkerFactory.detachMarker(name);
 	}
 
 	public Marker getDetachedMarker(String name) {
-		return new Marker(markerFactory.getDetachedMarker(name));
+		return new Marker(slf4jMarkerFactory.getDetachedMarker(name));
 	}
 
 	public boolean exists(String name) {
-		return markerFactory.exists(name);
+		return slf4jMarkerFactory.exists(name);
 	}
 }
