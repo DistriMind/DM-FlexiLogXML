@@ -31,7 +31,7 @@ import java.util.Collections;
 /**
  * @author Jason Mahdjoub
  * @version 1.0
- * @since DM-UtilsLib 1.0.0
+ * @since DM-FlexiLogXML 1.0.0
  */
 public class LogManager {
 	private static volatile Collection<Handler> handlers= Collections.emptyList();

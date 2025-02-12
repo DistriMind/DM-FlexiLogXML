@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * @author Jason Mahdjoub
  * @version 1.0
- * @since DM-UtilsLib 7.0.0
+ * @since DM-FlexiLogXML 7.0.0
  */
 public class AllTests {
 

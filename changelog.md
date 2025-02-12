@@ -1,6 +1,6 @@
 DM-FlexiLogXML
 =====
-1.4.3 STABLE 
+1.4.4 STABLE 
 
 # Creator(s):
 * Jason MAHDJOUB
@@ -10,7 +10,7 @@ DM-FlexiLogXML
 
 # Changes:
 
-### 1.4.3 STABLE (2025-02-12)
+### 1.4.4 STABLE (2025-02-12)
 #### Fix bug
 * Fix bad use of getDeclaredMethod method on ReflexionTools class
 

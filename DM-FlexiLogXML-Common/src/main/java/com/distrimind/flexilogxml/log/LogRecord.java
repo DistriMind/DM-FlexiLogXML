@@ -30,7 +30,7 @@ import java.util.Arrays;
 /**
  * @author Jason Mahdjoub
  * @version 1.0
- * @since DM-UtilsLib 1.1.0
+ * @since DM-FlexiLogXML 1.1.0
  */
 public class LogRecord {
 	private final Level level;

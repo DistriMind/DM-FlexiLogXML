@@ -28,7 +28,7 @@ import org.slf4j.event.Level;
 /**
  * @author Jason Mahdjoub
  * @version 1.0
- * @since DM-UtilsLib 1.0.2
+ * @since DM-FlexiLogXML 1.0.2
  */
 public interface Handler {
 	default Level getDefaultLevel()

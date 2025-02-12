@@ -74,7 +74,7 @@ subprojects {
         ruleSetFiles = files("../pmd/pmd-rules.xml")
     }
 
-    version = '1.4.3-STABLE'
+    version = '1.4.4-STABLE'
 
 
 
@@ -186,10 +186,10 @@ subprojects {
                     }
                     issueManagement {
                         system = 'GitHub'
-                        url = 'https://github.com/JasonMahdjoub/Utils/issues'
+                        url = 'https://github.com/JasonMahdjoub/DM-FlexiLogXML/issues'
                     }
                     scm {
-                        connection = 'https://github.com/JasonMahdjoub/Utils'
+                        connection = 'https://github.com/JasonMahdjoub/DM-FlexiLogXML'
                         developerConnection = connection
                         url = connection
                     }
