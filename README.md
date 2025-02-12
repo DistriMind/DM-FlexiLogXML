@@ -16,7 +16,7 @@ Adapt into your build.gradle file, the next code :
 	    ...
 	    dependencies {
 		    ...
-		    api(group:'com.distrimind.flexilogxml.desktop', name: 'DM-FlexiLogXML-Desktop', version: '1.4.2-STABLE')
+		    api(group:'com.distrimind.flexilogxml.desktop', name: 'DM-FlexiLogXML-Desktop', version: '1.4.3-STABLE')
 		    ...
 	    }
 	    ...
@@ -28,7 +28,7 @@ Adapt into your build.gradle file, the next code :
 	    ...
 	    dependencies {
 		    ...
-		    implementation(group:'com.distrimind.flexilogxml.android', name: 'DM-FlexiLogXML-Android', version: '1.4.2-STABLE')
+		    implementation(group:'com.distrimind.flexilogxml.android', name: 'DM-FlexiLogXML-Android', version: '1.4.3-STABLE')
 		    ...
 	    }
 	    ...
@@ -60,7 +60,7 @@ Adapt into your pom.xml file, the next code :
                 <dependency>
                     <groupId>com.distrimind.flexilogxml.desktop</groupId>
                     <artifactId>DM-FlexiLogXML-Desktop</artifactId>
-                    <version>1.4.2-STABLE</version>
+                    <version>1.4.3-STABLE</version>
                 </dependency>
                 ...
             </dependencies>
@@ -75,7 +75,7 @@ Adapt into your pom.xml file, the next code :
         <dependency>
             <groupId>com.distrimind.flexilogxml.android</groupId>
             <artifactId>DM-FlexiLogXML-Android</artifactId>
-            <version>1.4.2-STABLE</version>
+            <version>1.4.3-STABLE</version>
         </dependency>
         ...
     ```

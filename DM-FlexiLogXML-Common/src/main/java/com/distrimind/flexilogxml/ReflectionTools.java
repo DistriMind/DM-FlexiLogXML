@@ -98,7 +98,7 @@ public class ReflectionTools {
 		try {
 			for (Class<?> superClass = clazz; superClass != null && superClass != Object.class; superClass = superClass.getSuperclass()) {
 				try {
-					return superClass.getDeclaredMethod(methodName);
+					return superClass.getDeclaredMethod(methodName, parameters);
 				}
 				catch (NoSuchMethodException ignored)
 				{
