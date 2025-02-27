@@ -1,6 +1,6 @@
 DM-FlexiLogXML
 =====
-1.4.4 STABLE 
+2.0.1 STABLE 
 
 # Creator(s):
 * Jason MAHDJOUB
@@ -9,6 +9,10 @@ DM-FlexiLogXML
 * Jason MAHDJOUB (Entered in the team at 2025-01-15)
 
 # Changes:
+
+### 2.0.1 STABLE (2025-02-27)
+#### Internal change
+* Rename package base
 
 ### 1.4.4 STABLE (2025-02-12)
 #### Fix bug

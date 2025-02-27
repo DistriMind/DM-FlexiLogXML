@@ -17,8 +17,6 @@ def artifactoryUser = ""
 def artifactoryPwd = ""
 def onedevUser = ""
 def onedevPwd = ""
-def githubUser = ""
-def githubPwd = ""
 
 if (propFile.canRead()) {
     props.load(new FileInputStream(propFile))
@@ -34,11 +32,6 @@ if (propFile.canRead()) {
         onedevUser = props.get("onedev_user")
     if (props != null && props.containsKey('onedev_password'))
         onedevPwd = props.get("onedev_password")
-    if (props != null && props.containsKey('github_user'))
-        githubUser = props.get("github_user")
-    if (props != null && props.containsKey('github_password'))
-        githubPwd = props.get("github_password")
-
 }
 
 
@@ -78,7 +71,7 @@ subprojects {
         ruleSetFiles = files("../pmd/pmd-rules.xml")
     }
 
-    version = '2.0.0-STABLE'
+    version = '2.0.1-STABLE'
 
 
 
