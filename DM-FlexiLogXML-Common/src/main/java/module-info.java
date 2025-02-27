@@ -1,5 +1,5 @@
 /*
-DM-FlexiLogXML (package com.distrimind.flexilogxml)
+DM-FlexiLogXML (package fr.distrimind.oss.flexilogxml)
 Copyright (C) 2024 Jason Mahdjoub (author, creator and contributor) (Distrimind)
 The project was created on January 11, 2025
 
@@ -24,11 +24,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 module FlexiLogXML_Common {
 	requires org.slf4j;
 
-	exports com.distrimind.flexilogxml;
-	exports com.distrimind.flexilogxml.systeminfo;
-	exports com.distrimind.flexilogxml.exceptions;
-	exports com.distrimind.flexilogxml.xml;
-	exports com.distrimind.flexilogxml.log;
-	exports com.distrimind.flexilogxml.concurrent;
+	exports fr.distrimind.oss.flexilogxml;
+	exports fr.distrimind.oss.flexilogxml.systeminfo;
+	exports fr.distrimind.oss.flexilogxml.exceptions;
+	exports fr.distrimind.oss.flexilogxml.xml;
+	exports fr.distrimind.oss.flexilogxml.log;
+	exports fr.distrimind.oss.flexilogxml.concurrent;
 
 }

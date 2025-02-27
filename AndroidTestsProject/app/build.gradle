@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = 'com.distrimind.flexilogxml.android'
+    namespace = 'fr.distrimind.oss.flexilogxml.android'
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.distrimind.flexilogxml"
+        applicationId = "fr.distrimind.oss.flexilogxml"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

@@ -10,7 +10,7 @@
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [ %-62logger{60} ] - %-5level - %msg%n</pattern>
         </encoder>
     </appender>
-    <logger name="com.distrimind.flexilogxml.TestLog" level="DEBUG" />
+    <logger name="fr.distrimind.oss.flexilogxml.TestLog" level="DEBUG" />
     <logger name="Utils" level="DEBUG" />
     <root level="INFO">
         <appender-ref ref="STDOUT"/>

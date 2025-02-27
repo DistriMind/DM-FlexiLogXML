@@ -1,5 +1,5 @@
 apply from: ("../common.gradle")
-group = 'com.distrimind.flexilogxml.android'
+group = 'fr.distrimind.oss.flexilogxml.android'
 
 dependencies {
     api project(':DM-FlexiLogXML-Common')

@@ -13,11 +13,12 @@ plugins {
 Properties props = new Properties()
 def propFile = new File(project.getProjectDir().getParentFile(), 'credentials.properties')
 def artifactoryUrl = "https://artifactory.distri-mind.fr:443/artifactory"
-def sonatypeStagingUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
 def artifactoryUser = ""
 def artifactoryPwd = ""
-def sonatypeUser = ""
-def sonatypePwd = ""
+def onedevUser = ""
+def onedevPwd = ""
+def githubUser = ""
+def githubPwd = ""
 
 if (propFile.canRead()) {
     props.load(new FileInputStream(propFile))
@@ -29,12 +30,15 @@ if (propFile.canRead()) {
         artifactoryUser = props.get("artifactory_user")
     if (props != null && props.containsKey('artifactory_password'))
         artifactoryPwd = props.get("artifactory_password")
-    if (props != null && props.containsKey('sonatype_staging_url'))
-        sonatypeStagingUrl = props.get("sonatype_staging_url")
-    if (props != null && props.containsKey('sonatype_user'))
-        sonatypeUser = props.get("sonatype_user")
-    if (props != null && props.containsKey('sonatype_password'))
-        sonatypePwd = props.get("sonatype_password")
+    if (props != null && props.containsKey('onedev_user'))
+        onedevUser = props.get("onedev_user")
+    if (props != null && props.containsKey('onedev_password'))
+        onedevPwd = props.get("onedev_password")
+    if (props != null && props.containsKey('github_user'))
+        githubUser = props.get("github_user")
+    if (props != null && props.containsKey('github_password'))
+        githubPwd = props.get("github_password")
+
 }
 
 
@@ -74,7 +78,7 @@ subprojects {
         ruleSetFiles = files("../pmd/pmd-rules.xml")
     }
 
-    version = '1.4.4-STABLE'
+    version = '2.0.0-STABLE'
 
 
 
@@ -182,16 +186,16 @@ subprojects {
                     }
                     organization {
                         name = 'DistriMind'
-                        url = 'https://github.com/JasonMahdjoub'
+                        url = 'https://distri-mind.fr'
                     }
                     issueManagement {
                         system = 'GitHub'
-                        url = 'https://github.com/JasonMahdjoub/DM-FlexiLogXML/issues'
+                        url = 'https://github.com/DistriMind/DM-FlexiLogXML'
                     }
                     scm {
-                        connection = 'https://github.com/JasonMahdjoub/DM-FlexiLogXML'
-                        developerConnection = connection
-                        url = connection
+                        connection = 'scm:git:https://git.distri-mind.fr/DM-FlexiLogXML'
+                        developerConnection = 'scm:git:https://git.distri-mind.fr/DM-FlexiLogXML'
+                        url = 'https://git.distri-mind.fr/DM-FlexiLogXML'
                     }
                     licenses {
                         license {
@@ -213,10 +217,10 @@ subprojects {
             }
             maven {
                 credentials {
-                    username = "${sonatypeUser}"
-                    password = "${sonatypePwd}"
+                    username = "${onedevUser}"
+                    password = "${onedevPwd}"
                 }
-                url = "${sonatypeStagingUrl}"
+                url = 'https://git.distri-mind.fr/DM-FlexiLogXML/~maven'
             }
         }
     }

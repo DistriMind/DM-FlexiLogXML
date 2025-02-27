@@ -1,5 +1,5 @@
 apply from: ("../common.gradle")
-group = 'com.distrimind.flexilogxml'
+group = 'fr.distrimind.oss.flexilogxml'
 
 dependencies {
     implementation jlibs.slf4jApi

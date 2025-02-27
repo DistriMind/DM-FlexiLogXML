@@ -1,5 +1,5 @@
 apply from: ("../common.gradle")
-group = 'com.distrimind.flexilogxml.desktop'
+group = 'fr.distrimind.oss.flexilogxml.desktop'
 sourceSets {
     test {
         java {
@@ -25,7 +25,7 @@ test {
     useTestNG {
         /*parallel 'none'
         maxParallelForks = 1*/
-        suites 'src/test/resources/com/distrimind/xmllib/desktop/AllTestsNG.xml'
+        suites 'src/test/resources/fr/distrimind/oss/xmllib/desktop/AllTestsNG.xml'
     }
 
     minHeapSize = "1G"
