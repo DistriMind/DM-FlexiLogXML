@@ -3,12 +3,12 @@
 <suite thread-count="24" name="Default Suite">
   <test thread-count="24" name="testLog">
     <classes>
-      <class name="fr.distrimind.oss.flexilogxml.TestLog"/>
+      <class name="fr.distrimind.oss.flexilogxml.common.TestLog"/>
     </classes>
   </test> <!-- testLog -->
   <test thread-count="24" name="testXML">
     <classes>
-      <class name="fr.distrimind.oss.flexilogxml.TestXML"/>
+      <class name="fr.distrimind.oss.flexilogxml.common.TestXML"/>
     </classes>
   </test> <!-- testXML -->
 </suite> <!-- Default Suite -->

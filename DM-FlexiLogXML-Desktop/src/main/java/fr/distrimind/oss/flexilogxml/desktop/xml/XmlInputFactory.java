@@ -25,8 +25,8 @@
 
 package fr.distrimind.oss.flexilogxml.desktop.xml;
 
-import fr.distrimind.oss.flexilogxml.exceptions.XMLStreamException;
-import fr.distrimind.oss.flexilogxml.xml.IXmlReader;
+import fr.distrimind.oss.flexilogxml.common.exceptions.XMLStreamException;
+import fr.distrimind.oss.flexilogxml.common.xml.IXmlReader;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamReader;
@@ -37,7 +37,7 @@ import java.io.Reader;
  * @version 1.0
  * @since DM-FlexiLogXML 7.0.0
  */
-public class XmlInputFactory extends fr.distrimind.oss.flexilogxml.xml.XmlInputFactory {
+public class XmlInputFactory extends fr.distrimind.oss.flexilogxml.common.xml.XmlInputFactory {
 	@Override
 	public IXmlReader getXMLReader(Reader input) throws XMLStreamException {
 		try {

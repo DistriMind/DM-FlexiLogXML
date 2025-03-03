@@ -26,9 +26,9 @@
 package fr.distrimind.oss.flexilogxml.android.log;
 
 
-import fr.distrimind.oss.flexilogxml.FlexiLogXML;
+import fr.distrimind.oss.flexilogxml.common.FlexiLogXML;
 import fr.distrimind.oss.flexilogxml.android.ContextProvider;
-import fr.distrimind.oss.flexilogxml.log.Level;
+import fr.distrimind.oss.flexilogxml.common.log.Level;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -24,13 +24,14 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 package fr.distrimind.oss.flexilogxml.android;
 
 
-import fr.distrimind.oss.flexilogxml.Tests;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import java.util.Collection;
+
+import fr.distrimind.oss.flexilogxml.common.Tests;
 
 @RunWith(Parameterized.class)
 public class TestNGRunner {

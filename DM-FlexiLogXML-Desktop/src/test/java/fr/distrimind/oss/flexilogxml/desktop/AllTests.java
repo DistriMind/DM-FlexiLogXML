@@ -25,9 +25,9 @@
 
 package fr.distrimind.oss.flexilogxml.desktop;
 
-import fr.distrimind.oss.flexilogxml.Tests;
-import fr.distrimind.oss.flexilogxml.FlexiLogXML;
-import fr.distrimind.oss.flexilogxml.log.Level;
+import fr.distrimind.oss.flexilogxml.common.Tests;
+import fr.distrimind.oss.flexilogxml.common.FlexiLogXML;
+import fr.distrimind.oss.flexilogxml.common.log.Level;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +37,7 @@ import java.io.IOException;
  * @version 1.0
  * @since DM-FlexiLogXML 7.0.0
  */
-public class AllTests extends fr.distrimind.oss.flexilogxml.AllTests {
+public class AllTests extends fr.distrimind.oss.flexilogxml.common.AllTests {
 
 	public static void main(String[] args) throws IOException {
 		Tests t=getTests();
@@ -47,6 +47,6 @@ public class AllTests extends fr.distrimind.oss.flexilogxml.AllTests {
 	}
 	public static Tests getTests()
 	{
-		return fr.distrimind.oss.flexilogxml.AllTests.getTests();
+		return fr.distrimind.oss.flexilogxml.common.AllTests.getTests();
 	}
 }

@@ -23,11 +23,11 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 package fr.distrimind.oss.flexilogxml.android.xml;
 
-import fr.distrimind.oss.flexilogxml.exceptions.XMLStreamException;
-import fr.distrimind.oss.flexilogxml.xml.AbstractXmlReader;
-import fr.distrimind.oss.flexilogxml.xml.Location;
-import fr.distrimind.oss.flexilogxml.xml.QName;
-import fr.distrimind.oss.flexilogxml.xml.XMLType;
+import fr.distrimind.oss.flexilogxml.common.exceptions.XMLStreamException;
+import fr.distrimind.oss.flexilogxml.common.xml.AbstractXmlReader;
+import fr.distrimind.oss.flexilogxml.common.xml.Location;
+import fr.distrimind.oss.flexilogxml.common.xml.QName;
+import fr.distrimind.oss.flexilogxml.common.xml.XMLType;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 

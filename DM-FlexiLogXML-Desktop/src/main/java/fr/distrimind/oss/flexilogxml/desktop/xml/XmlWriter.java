@@ -25,8 +25,8 @@
 
 package fr.distrimind.oss.flexilogxml.desktop.xml;
 
-import fr.distrimind.oss.flexilogxml.exceptions.XMLStreamException;
-import fr.distrimind.oss.flexilogxml.xml.AbstractXmlWriter;
+import fr.distrimind.oss.flexilogxml.common.exceptions.XMLStreamException;
+import fr.distrimind.oss.flexilogxml.common.xml.AbstractXmlWriter;
 
 import javax.xml.stream.XMLStreamWriter;
 

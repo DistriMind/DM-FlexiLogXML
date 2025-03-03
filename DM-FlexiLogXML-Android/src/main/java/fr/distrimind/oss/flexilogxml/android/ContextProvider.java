@@ -25,8 +25,8 @@ package fr.distrimind.oss.flexilogxml.android;
 
 import android.app.Application;
 import android.content.Context;
-import fr.distrimind.oss.flexilogxml.FlexiLogXML;
-import fr.distrimind.oss.flexilogxml.log.Level;
+import fr.distrimind.oss.flexilogxml.common.FlexiLogXML;
+import fr.distrimind.oss.flexilogxml.common.log.Level;
 
 /**
  * @author Jason Mahdjoub

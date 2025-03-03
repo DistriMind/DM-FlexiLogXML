@@ -1,8 +1,8 @@
 package fr.distrimind.oss.flexilogxml.android;
 
-import fr.distrimind.oss.flexilogxml.FlexiLogXML;
-import fr.distrimind.oss.flexilogxml.log.Level;
-import fr.distrimind.oss.flexilogxml.log.MarkerFactory;
+import fr.distrimind.oss.flexilogxml.common.FlexiLogXML;
+import fr.distrimind.oss.flexilogxml.common.log.Level;
+import fr.distrimind.oss.flexilogxml.common.log.MarkerFactory;
 
 import org.junit.Test;
 

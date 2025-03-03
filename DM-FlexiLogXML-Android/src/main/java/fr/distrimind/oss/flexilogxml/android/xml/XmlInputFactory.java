@@ -25,9 +25,9 @@ package fr.distrimind.oss.flexilogxml.android.xml;
 
 import android.util.Xml;
 
-import fr.distrimind.oss.flexilogxml.ReflectionTools;
-import fr.distrimind.oss.flexilogxml.exceptions.XMLStreamException;
-import fr.distrimind.oss.flexilogxml.xml.IXmlReader;
+import fr.distrimind.oss.flexilogxml.common.ReflectionTools;
+import fr.distrimind.oss.flexilogxml.common.exceptions.XMLStreamException;
+import fr.distrimind.oss.flexilogxml.common.xml.IXmlReader;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -40,7 +40,7 @@ import java.lang.reflect.Method;
  * @version 1.0
  * @since DM-FlexiLogXML 7.0.0
  */
-public final class XmlInputFactory extends fr.distrimind.oss.flexilogxml.xml.XmlInputFactory {
+public final class XmlInputFactory extends fr.distrimind.oss.flexilogxml.common.xml.XmlInputFactory {
 	private static final Method newPullParser= ReflectionTools.getMethod(Xml.class, "newPullParser");
 
 	public XmlInputFactory() {

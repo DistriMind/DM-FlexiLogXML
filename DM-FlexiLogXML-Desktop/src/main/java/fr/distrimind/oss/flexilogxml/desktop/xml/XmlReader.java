@@ -25,11 +25,11 @@
 
 package fr.distrimind.oss.flexilogxml.desktop.xml;
 
-import fr.distrimind.oss.flexilogxml.exceptions.XMLStreamException;
-import fr.distrimind.oss.flexilogxml.xml.AbstractXmlReader;
-import fr.distrimind.oss.flexilogxml.xml.Location;
-import fr.distrimind.oss.flexilogxml.xml.QName;
-import fr.distrimind.oss.flexilogxml.xml.XMLType;
+import fr.distrimind.oss.flexilogxml.common.exceptions.XMLStreamException;
+import fr.distrimind.oss.flexilogxml.common.xml.AbstractXmlReader;
+import fr.distrimind.oss.flexilogxml.common.xml.Location;
+import fr.distrimind.oss.flexilogxml.common.xml.QName;
+import fr.distrimind.oss.flexilogxml.common.xml.XMLType;
 
 import javax.xml.stream.XMLStreamReader;
 

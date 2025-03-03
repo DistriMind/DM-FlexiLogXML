@@ -24,9 +24,9 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 package fr.distrimind.oss.flexilogxml.android.xml;
 
 import android.util.Xml;
-import fr.distrimind.oss.flexilogxml.ReflectionTools;
-import fr.distrimind.oss.flexilogxml.exceptions.XMLStreamException;
-import fr.distrimind.oss.flexilogxml.xml.IXmlWriter;
+import fr.distrimind.oss.flexilogxml.common.ReflectionTools;
+import fr.distrimind.oss.flexilogxml.common.exceptions.XMLStreamException;
+import fr.distrimind.oss.flexilogxml.common.xml.IXmlWriter;
 import org.xmlpull.v1.XmlSerializer;
 
 import java.io.IOException;
@@ -39,7 +39,7 @@ import java.lang.reflect.Method;
  * @version 1.0
  * @since DM-FlexiLogXML 7.0.0
  */
-public class XmlOutputFactory extends fr.distrimind.oss.flexilogxml.xml.XmlOutputFactory {
+public class XmlOutputFactory extends fr.distrimind.oss.flexilogxml.common.xml.XmlOutputFactory {
 	private static final Method newSerializer= ReflectionTools.getMethod(Xml.class, "newSerializer");
 	@Override
 	public IXmlWriter getXMLWriter(boolean enableIndent, OutputStreamWriter writer) throws XMLStreamException {

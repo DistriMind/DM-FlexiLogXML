@@ -21,14 +21,14 @@ along with this program; if not, write to the Free Software Foundation,
 Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-module FlexiLogXML_Common {
+module fr.distrimind.oss.flexilogxml.common {
 	requires org.slf4j;
 
-	exports fr.distrimind.oss.flexilogxml;
-	exports fr.distrimind.oss.flexilogxml.systeminfo;
-	exports fr.distrimind.oss.flexilogxml.exceptions;
-	exports fr.distrimind.oss.flexilogxml.xml;
-	exports fr.distrimind.oss.flexilogxml.log;
-	exports fr.distrimind.oss.flexilogxml.concurrent;
+	exports fr.distrimind.oss.flexilogxml.common;
+	exports fr.distrimind.oss.flexilogxml.common.systeminfo;
+	exports fr.distrimind.oss.flexilogxml.common.exceptions;
+	exports fr.distrimind.oss.flexilogxml.common.xml;
+	exports fr.distrimind.oss.flexilogxml.common.log;
+	exports fr.distrimind.oss.flexilogxml.common.concurrent;
 
 }

@@ -25,8 +25,8 @@
 
 package fr.distrimind.oss.flexilogxml.desktop.xml;
 
-import fr.distrimind.oss.flexilogxml.exceptions.XMLStreamException;
-import fr.distrimind.oss.flexilogxml.xml.IXmlWriter;
+import fr.distrimind.oss.flexilogxml.common.exceptions.XMLStreamException;
+import fr.distrimind.oss.flexilogxml.common.xml.IXmlWriter;
 
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamWriter;
@@ -37,7 +37,7 @@ import java.io.OutputStreamWriter;
  * @version 1.0
  * @since DM-FlexiLogXML 7.0.0
  */
-public class XmlOutputFactory extends fr.distrimind.oss.flexilogxml.xml.XmlOutputFactory {
+public class XmlOutputFactory extends fr.distrimind.oss.flexilogxml.common.xml.XmlOutputFactory {
 
 	@Override
 	public IXmlWriter getXMLWriter(boolean enableIndent, OutputStreamWriter writer) throws XMLStreamException {

@@ -3,7 +3,7 @@
 ## Supported Versions
 
 | Version | Supported          |
-|---------| ------------------ |
+|---------|--------------------|
 | >=1.0.0 | :heavy_check_mark: |
 | <1.0.0  | :x:                |
 
