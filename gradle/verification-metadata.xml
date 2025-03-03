@@ -7,6 +7,7 @@
       <trusted-keys>
          <trusted-key id="0785B3EFF60B1B1BEA94E0BB7C25280EAE63EBE5" group="^org[.]apache[.]httpcomponents($|([.].*))" regex="true"/>
          <trusted-key id="19BEAB2D799C020F17C69126B16698A4ADF4D638" group="org.checkerframework" name="checker-qual" version="3.48.3"/>
+         <trusted-key id="1D85469D8559C2E1DF5F925131D2D79DF7E85DD3" group="org.jcommander" name="jcommander" version="1.83"/>
          <trusted-key id="2DB4F1EF0FA761ECC4EA935C86FDC7E2A11262CB" group="org.apache.commons"/>
          <trusted-key id="475F3B8E59E6E63AA78067482C7B12F2A511E325" group="org.slf4j"/>
          <trusted-key id="4C5F68D09D42BA7FAC888DF9A929EA2321FDBF8F">
@@ -23,7 +24,7 @@
          <trusted-key id="A5BD02B93E7A40482EB1D66A5F69AD087600B22C" group="org.ow2.asm" name="asm" version="9.7.1"/>
          <trusted-key id="B01128C8FD304FE48E6EED2C347CD0EAED975C5F" group="org.antlr"/>
          <trusted-key id="BC87A3FD0A54480F0BADBEBD21939FF0CA2A6567" group="commons-codec" name="commons-codec" version="1.15"/>
-         <trusted-key id="C4F54D8622C95CC3F098721A0F13D5631D6AF36D" group="org.testng" name="testng" version="7.10.2"/>
+         <trusted-key id="C4F54D8622C95CC3F098721A0F13D5631D6AF36D" group="org.testng" name="testng" version="7.11.0"/>
          <trusted-key id="C70B844F002F21F6D2B9C87522E44AC0622B91C3" group="com.beust" name="jcommander" version="1.82"/>
          <trusted-key id="C7BE5BCC9FEC15518CFDA882B0F3710FA64900E7" group="com.google.code.gson"/>
          <trusted-key id="E0D98C5FD55A8AF232290E58DEE12B9896F97E34" group="org.pcollections" name="pcollections" version="4.0.2"/>
