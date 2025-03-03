@@ -15,11 +15,13 @@
         <exclude name="TestClassWithoutTestCases"/>
         <exclude name="NullAssignment"/>
 
+
     </rule>
 
     <rule ref="category/java/bestpractices.xml">
         <exclude name="UseVarargs"/>
         <exclude name="UnitTestContainsTooManyAsserts"/>
         <exclude name="UnitTestAssertionsShouldIncludeMessage"/>
+        <exclude name="ExhaustiveSwitchHasDefault"/>
     </rule>
 </ruleset>
