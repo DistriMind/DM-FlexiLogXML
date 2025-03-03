@@ -1,6 +1,6 @@
 DM-FlexiLogXML
 =====
-2.1.2 STABLE 
+2.1.3 STABLE 
 
 # Creator(s):
 * Jason MAHDJOUB
@@ -10,7 +10,7 @@ DM-FlexiLogXML
 
 # Changes:
 
-### 2.1.2 STABLE (2025-03-03)
+### 2.1.3 STABLE (2025-03-03)
 #### Internal change
 * Rename package base
 * Update dependencies
