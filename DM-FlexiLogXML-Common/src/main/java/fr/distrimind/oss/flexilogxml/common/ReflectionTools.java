@@ -333,6 +333,28 @@ public class ReflectionTools {
 	public static ClassLoader getClassLoader() {
 		return UtilClassLoader.getLoader();
 	}
+	@SuppressWarnings("deprecation")
+	public static <T> boolean canAccess(Constructor<T> constructor) {
+		if (canAccessMethodUsable)
+			return constructor.canAccess(null);
+		else
+			return constructor.isAccessible();
 
+	}
+	public static <T> T getInstance(Constructor<T> constructor, Object ... args) throws IllegalAccessException, DMIOException {
 
+		boolean accessible = canAccess(constructor);
+		if (!accessible)
+			constructor.setAccessible(true);
+		try {
+			try {
+				return constructor.newInstance(args);
+			} catch (InstantiationException | InvocationTargetException e) {
+				throw DMIOException.getDMIOException(e);
+			}
+		} finally {
+			if (!accessible)
+				constructor.setAccessible(false);
+		}
+	}
 }
