@@ -66,12 +66,12 @@ subprojects {
 
     pmd {
         consoleOutput = true
-        toolVersion = "7.11.0"
+        toolVersion = "7.13.0"
         rulesMinimumPriority = 5
         ruleSetFiles = files("../pmd/pmd-rules.xml")
     }
 
-    version = '2.2.0-STABLE'
+    version = '2.2.1-STABLE'
 
 
 
