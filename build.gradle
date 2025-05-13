@@ -71,7 +71,7 @@ subprojects {
         ruleSetFiles = files("../pmd/pmd-rules.xml")
     }
 
-    version = '2.2.1-STABLE'
+    version = '2.2.2-STABLE'
 
 
 
