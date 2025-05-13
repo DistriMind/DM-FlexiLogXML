@@ -24,9 +24,10 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 package fr.distrimind.oss.flexilogxml.common.xml;
 /**
  * @author Jason Mahdjoub
- * @version 1.0
+ * @version 1.1
  * @since DM-FlexiLogXML 7.0.0
  */
+@FunctionalInterface
 public interface IXmlParser {
 	int getCurrentLevel();
 
