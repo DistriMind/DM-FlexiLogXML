@@ -10,7 +10,7 @@ DM-FlexiLogXML
 
 # Changes:
 
-### 2.1.5 STABLE (2025-05-15)
+### 2.2.5 STABLE (2025-05-15)
 #### Internal change
 * Make the build reproducible
 * Improve Gradle configuration
